@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Review based Product Uplift Prediction</title>
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+
+<body>
+  <div class="detail-container">
+
+    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Project</span>
+      <h1>Amazon Review based Product Uplift Prediction</h1>
+      <div class="detail-meta">
+        <span>2025</span>
+        <span>Personal Project</span>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+
+      <!-- OVERVIEW -->
+      <h2>Overview</h2>
+      <p>
+        This project investigates why many e-commerce products fail to generate revenue despite high discounts and strong ratings.
+        I built a product-level analytics and AI pipeline that combines structured data with GPT-based review analysis to identify revenue leakage and predict improvement potential.
+      </p>
+
+      <!-- PROBLEM -->
+      <h2>Problem Framing</h2>
+
+      <div class="image-gallery">
+        <img src="slides/proj2-1.jpg" alt="Problem Statement" />
+      </div>
+
+      <p>
+        The core business question was whether higher discounts actually drive revenue.
+        Initial observations showed inconsistent performance across products, suggesting that pricing and ratings alone are insufficient indicators of sales outcomes.
+      </p>
+
+      <ul>
+        <li>Does higher discount increase revenue?</li>
+        <li>Are ratings predictive of performance?</li>
+        <li>Where does revenue leakage occur?</li>
+      </ul>
+
+      <!-- CATEGORY ANALYSIS -->
+      <h2>Category-Level Revenue Patterns</h2>
+
+      <div class="image-gallery">
+        <img src="slides/proj2-2.jpg" alt="Category Analysis" />
+      </div>
+
+      <p>
+        Revenue is highly concentrated in the 45%–55% discount range, indicating that moderate discounting maximizes efficiency.
+        Increasing discounts beyond this range does not proportionally increase revenue, showing clear diminishing returns.
+      </p>
+
+      <!-- COST EFFECTIVENESS -->
+      <h2>Discount vs Revenue Efficiency</h2>
+
+      <div class="image-gallery">
+        <img src="slides/proj2-3.jpg" alt="Cost Effectiveness" />
+      </div>
+
+      <p>
+        The cost-effectiveness analysis further confirms that revenue peaks at moderate discount levels.
+        Products with excessive discounts often fail to generate meaningful revenue, highlighting pricing inefficiency.
+      </p>
+
+      <!-- FAILURE CASE -->
+      <h2>Failure of Traditional Metrics</h2>
+
+      <div class="image-gallery">
+        <img src="slides/proj2-4.jpg" alt="Unprofitable Products" />
+      </div>
+
+      <p>
+        Many products with ratings above 4.0 still generate minimal revenue.
+        This demonstrates that ratings and discount rates have limited explanatory power and fail to capture true product performance.
+      </p>
+
+      <!-- CORE INSIGHT -->
+      <div class="image-gallery">
+        <img src="slides/proj2-5.jpg" alt="Insight Summary" />
+      </div>
+
+      <p>
+        A distinct group of high-discount, low-revenue products emerges.
+        This reveals that underperformance is driven by product-level issues rather than pricing alone.
+      </p>
+
+      <!-- AI PART -->
+      <h2>AI Driven Uplift Modeling</h2>
+
+      <p>
+        To identify root causes, I used GPT to analyze customer reviews and extract product-level pain points.
+        These insights were transformed into structured features and incorporated into a predictive uplift model.
+      </p>
+
+      <ul>
+        <li>GPT-based review analysis → pain point extraction</li>
+        <li>Feature engineering from unstructured text</li>
+        <li>Uplift modeling to estimate revenue improvement</li>
+      </ul>
+
+      <p>
+        Across 1,737 products, the model identified 257 products (14.8%) with clear improvement potential.
+        This confirmed that product-level issues, not pricing alone, drive underperformance.
+      </p>
+
+      <!-- IMPACT -->
+      <h2>Impact</h2>
+
+      <ul>
+        <li>Identified inefficiencies in discount-based pricing strategies</li>
+        <li>Discovered hidden low-performance product segments</li>
+        <li>Converted customer reviews into actionable business insights</li>
+        <li>Enabled data-driven product improvement prioritization</li>
+      </ul>
+
+      <!-- POSITIONING -->
+      <h2>What This Project Demonstrates</h2>
+
+      <ul>
+        <li>Product Data Science and business-driven analytics</li>
+        <li>LLM application for real-world problem solving</li>
+        <li>Uplift modeling and causal thinking</li>
+        <li>Integration of structured and unstructured data</li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>GPT</span>
+        <span>Product Analytics</span>
+        <span>Uplift Modeling</span>
+        <span>LLM</span>
+        <span>E-commerce</span>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

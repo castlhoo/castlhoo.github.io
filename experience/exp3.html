@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concentrix | Work Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#experience" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      Back to Experience
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Work Experience</span>
+      <h1>Concentrix</h1>
+      <p class="detail-role">Data Scientist, Consulting</p>
+      <div class="detail-meta">
+        <span>Jun 2025 - Sep 2025</span>
+        <span>South Korea</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://www.instagram.com/p/DOxQYbfjYOd/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          Instagram Post
+        </a>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+      <h2>Overview</h2>
+      <p>
+        At Concentrix, I worked on a consulting project related to Samsung Galaxy Watch 8, using large scale
+        social listening data to understand user engagement and product perception. My role focused on applied
+        machine learning, behavioral signal analysis, and data driven consulting insights that could support
+        product positioning and user interaction strategy.
+      </p>
+
+      <h2>Key Responsibilities</h2>
+      <ul>
+        <li>
+          Aggregated and analyzed large scale social listening data to identify product perception patterns
+          and user engagement drivers.
+        </li>
+        <li>
+          Built machine learning models to detect content and behavioral features associated with stronger
+          user response and higher engagement.
+        </li>
+        <li>
+          Performed feature engineering on campaign and content related variables to quantify user interaction
+          signals in a structured way.
+        </li>
+        <li>
+          Developed an LLM based pipeline to automate semantic extraction and structure large volumes of
+          text data for analysis.
+        </li>
+      </ul>
+
+      <h2>Achievements</h2>
+      <ul>
+        <li>
+          Delivered consulting insights grounded in machine learning and data analysis for Galaxy Watch 8.
+        </li>
+        <li>
+          Identified high impact behavioral and content signals that supported stronger product positioning
+          decisions.
+        </li>
+        <li>
+          Contributed to measurable performance improvement, including a 1.2 times engagement lift and
+          a 1.5 times projected uplift in strategy validation.
+        </li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>Machine Learning</span>
+        <span>Product Analytics</span>
+        <span>Social Listening</span>
+        <span>LLMs</span>
+        <span>Consulting</span>
+        <span>Feature Engineering</span>
+      </div>
+
+      <div class="portfolio-slides">
+        <h2>Portfolio</h2>
+        <div class="slides-grid">
+          <img src="slides/13.jpg" alt="Concentrix Slide 1" />
+          <img src="slides/14.jpg" alt="Concentrix Slide 2" />
+          <img src="slides/15.jpg" alt="Concentrix Slide 3" />
+          <img src="slides/16.jpg" alt="Concentrix Slide 4" />
+          <img src="slides/17.jpg" alt="Concentrix Slide 5" />
+          <img src="slides/18.jpg" alt="Concentrix Slide 6" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.querySelectorAll('.slides-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+  </script>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>

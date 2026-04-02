@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Republic of Korea Army | Work Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#experience" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      Back to Experience
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Leadership Experience</span>
+      <h1>Republic of Korea Army</h1>
+      <p class="detail-role">Platoon Leader, First Lieutenant</p>
+      <div class="detail-meta">
+        <span>Mar 2022 - Jun 2024</span>
+        <span>South Korea</span>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+      <h2>Overview</h2>
+      <p>
+        In the Republic of Korea Army, I served as a platoon leader responsible for team management, personnel
+        development, and operational coordination. This experience shaped my leadership style and strengthened
+        my ability to guide teams through structure, communication, and accountability in high responsibility
+        environments.
+      </p>
+
+      <h2>Key Responsibilities</h2>
+      <ul>
+        <li>
+          Led a 30 member platoon and managed personnel through structured communication and day to day
+          operational oversight.
+        </li>
+        <li>
+          Conducted weekly counseling sessions to support team development, morale, and performance.
+        </li>
+        <li>
+          Built strong team cohesion through leadership, mentorship, and clear expectations.
+        </li>
+        <li>
+          Coordinated responsibilities across the platoon to maintain discipline, collaboration, and execution quality.
+        </li>
+      </ul>
+
+      <h2>Achievements</h2>
+      <ul>
+        <li>
+          Helped build one of the highest performing and most cohesive teams in the battalion through consistent
+          leadership and mentorship.
+        </li>
+        <li>
+          Strengthened my skills in communication, people management, and decision making under responsibility.
+        </li>
+        <li>
+          Developed a leadership foundation that continues to influence how I work in research, engineering,
+          and team based environments.
+        </li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>Leadership</span>
+        <span>Team Management</span>
+        <span>Communication</span>
+        <span>Mentorship</span>
+        <span>Operations</span>
+        <span>Responsibility</span>
+      </div>
+
+      <div class="portfolio-slides">
+        <h2>Portfolio</h2>
+        <div class="slides-grid">
+          <img src="slides/36.jpg" alt="ROKA Slide 1" />
+          <img src="slides/37.jpg" alt="ROKA Slide 2" />
+          <img src="slides/38.jpg" alt="ROKA Slide 3" />
+          <img src="slides/39.jpg" alt="ROKA Slide 4" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.querySelectorAll('.slides-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+  </script>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>

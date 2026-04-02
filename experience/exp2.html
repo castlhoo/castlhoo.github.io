@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UC San Diego MixLab | Work Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#experience" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      Back to Experience
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Research Experience</span>
+      <h1>UC San Diego (MixLab / UC LEAP)</h1>
+      <p class="detail-role">Research Intern, AI / LLM Systems</p>
+      <div class="detail-meta">
+        <span>Oct 2025 - Present</span>
+        <span>San Diego, CA</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://engineering.ucsb.edu/news/leap-forward-ai-enabled-materials-research" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          UCSB Engineering Article
+        </a>
+        <a href="https://sites.google.com/view/uc-leap/home" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          UC LEAP Official Site
+        </a>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+      <h2>Overview</h2>
+      <p>
+        At UC San Diego MixLab, I work on LLM systems for scientific research automation and reproducibility.
+        My research focuses on building multi agent AI pipelines that can extract scientific variables, datasets,
+        and analysis procedures from papers, then use multimodal experimental data to reproduce and interpret
+        published results.
+      </p>
+
+      <h2>Key Responsibilities</h2>
+      <ul>
+        <li>
+          Built a RAG based multi agent LLM pipeline to extract variables, datasets, and analysis workflows
+          from scientific literature.
+        </li>
+        <li>
+          Developed systems that use multimodal experimental data, including Raman spectroscopy, AFM, and
+          electronic transport measurements, to reproduce scientific analyses.
+        </li>
+        <li>
+          Worked on benchmarking and RL style feedback strategies to improve paper reproduction accuracy
+          and scientific reasoning quality.
+        </li>
+        <li>
+          Integrated material, surface, and transport signals into a unified AI workflow for automated
+          experimental interpretation.
+        </li>
+      </ul>
+
+      <h2>Achievements</h2>
+      <ul>
+        <li>
+          Contributed to a research direction that combines LLMs, retrieval systems, and multimodal scientific
+          data for reproducible AI driven discovery.
+        </li>
+        <li>
+          Helped create an end to end framework that moves beyond text summarization into executable scientific
+          analysis and result reconstruction.
+        </li>
+        <li>
+          Strengthened my experience in AI engineering through real world work on agent systems, grounded
+          reasoning, and scientific data workflows.
+        </li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>RAG</span>
+        <span>LLMs</span>
+        <span>Multi Agent Systems</span>
+        <span>Python</span>
+        <span>Scientific AI</span>
+        <span>Multimodal Data</span>
+      </div>
+
+      <div class="portfolio-slides">
+        <h2>Portfolio</h2>
+        <div class="slides-grid">
+          <img src="slides/exp2-slide1.jpg" alt="UC San Diego MixLab Slide 1" />
+          <img src="slides/exp2-slide2.jpg" alt="UC San Diego MixLab Slide 2" />
+          <img src="slides/exp2-slide3.jpg" alt="UC San Diego MixLab Slide 3" />
+          <img src="slides/exp2-slide4.jpg" alt="UC San Diego MixLab Slide 4" />
+          <img src="slides/exp2-slide6.jpg" alt="UC San Diego MixLab Slide 6" />
+          <img src="slides/exp2-slide7.jpg" alt="UC San Diego MixLab Slide 7" />
+          <img src="slides/exp2-slide8.jpg" alt="UC San Diego MixLab Slide 8" />
+          <img src="slides/exp2-slide9.jpg" alt="UC San Diego MixLab Slide 9" />
+          <img src="slides/exp2-slide10.jpg" alt="UC San Diego MixLab Slide 10" />                              
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.querySelectorAll('.slides-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+  </script>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>

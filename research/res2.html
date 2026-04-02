@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adaptation Disorders & Victimization - Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#research" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      Back to Research
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Thesis</span>
+      <h1>The Relationship between Adaptation Disorders and Victimization</h1>
+      <div class="detail-meta">
+        <span>2024</span>
+        <span>Dongguk University</span>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+
+      <h2>Overview</h2>
+      <p>
+        This study investigates the relationship between adaptation disorders and crime victimization among North Korean defectors using a quantitative statistical framework. 
+        Grounded in labeling theory, the research models how rigid gender norms and maladaptive perceptions influence vulnerability to crime during social integration.
+      </p>
+
+      <h2>Data & Variables</h2>
+      <ul>
+        <li><strong>Dataset:</strong> Korean Institute of Criminology survey (n ≈ 210)</li>
+        <li><strong>Independent Variable:</strong> Sexual adaptation disorder (Likert-scale composite)</li>
+        <li><strong>Dependent Variable:</strong> Crime victimization (binary outcome)</li>
+        <li><strong>Tools:</strong> R, SPSS 25</li>
+      </ul>
+
+      <h2>Statistical Approach</h2>
+      <ul>
+        <li>
+          <strong>Descriptive Analysis:</strong> Mean, median, and mode across variables (~3.0), indicating consistent gender norm perceptions
+        </li>
+        <li>
+          <strong>Normality Testing:</strong> All variables satisfied skewness (&lt;3) and kurtosis (&lt;20), validating parametric assumptions
+        </li>
+        <li>
+          <strong>Reliability Analysis:</strong> Cronbach’s α = 0.444 → relatively low internal consistency
+        </li>
+        <li>
+          <strong>Validity Testing:</strong> KMO = 0.581, Bartlett’s test p = 0.01 → acceptable construct validity
+        </li>
+        <li>
+          <strong>Correlation Analysis:</strong> No statistically significant relationships (p &gt; 0.05 across all variables)
+        </li>
+        <li>
+          <strong>Binary Logistic Regression:</strong> Used to model probability of victimization
+        </li>
+      </ul>
+
+      <h2>Key Results</h2>
+      <ul>
+        <li>
+          Logistic regression showed a positive but non-significant relationship between adaptation disorder and victimization
+        </li>
+        <li>
+          Odds Ratio: <strong>1.091</strong> → each unit increase slightly increases risk
+        </li>
+        <li>
+          p-value = 0.779 → not statistically significant (95% CI not satisfied)
+        </li>
+        <li>
+          Model explanatory power extremely low (Nagelkerke R² ≈ 0.001)
+        </li>
+        <li>
+          Classification accuracy: <strong>76.4%</strong>
+        </li>
+      </ul>
+
+      <h2>Interpretation</h2>
+      <p>
+        Although statistical significance was not achieved, the model reveals a directional trend suggesting that maladaptive gender perceptions may increase vulnerability to crime. 
+        The findings highlight structural and psychological risk factors that are not easily captured through traditional statistical thresholds, emphasizing the need for data-informed policy interventions.
+      </p>
+
+      <h2>Impact</h2>
+      <ul>
+        <li>Proposed data-driven policy recommendations for vulnerable populations</li>
+        <li>Designed intervention strategies including education and mentorship systems</li>
+        <li>Demonstrated application of statistical modeling to real-world social issues</li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>Logistic Regression</span>
+        <span>Statistical Analysis</span>
+        <span>R</span>
+        <span>SPSS</span>
+        <span>Social Data Science</span>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <a href="../files/WritingSample_SeonghoKim.pdf" target="_blank">
+          📄 View Full Paper
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>

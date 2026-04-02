@@ -1,10 +1,375 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My First Site</title>
-  </head>
-  <body>
-    <h1>🔥 My GitHub Site</h1>
-    <p>Welcome to my portfolio</p>
-  </body>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="logo">Seongho Kim</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#experience">Work Experience</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#volunteer">Community & Leadership</a>
+        <a href="#about-me">About Me</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Home ===== -->
+  <section id="home">
+    <div class="home-content fade-in">
+      <div class="profile-photo">
+        <img src="img/profile.jpg" alt="Seongho Kim" />
+      </div>
+      <p class="greeting">환영합니다 (Hwanyeong-hamnida) — Welcome</p>
+      <h1>Hi, I'm <span>Seongho Kim</span></h1>
+      <p>
+        AI Engineer and Data Scientist focused on building LLM systems, scalable data pipelines, and cloud-based data infrastructure.
+        Currently developing multi-agent AI systems for scientific discovery at UC San Diego, with experience in machine learning, product analytics, and high-performance data engineering on AWS.
+      </p>
+      <div class="home-buttons">
+        <a href="#experience" class="btn-primary">Experience</a>
+        <a href="#research" class="btn-secondary">Research</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Work Experience ===== -->
+  <section id="experience">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-subtitle">My professional and research experience.</p>
+    </div>
+
+    <div class="timeline">
+
+      <!-- Checkit -->
+      <a href="experience/exp1.html" class="timeline-item fade-in">
+        <div class="tl-header">
+          <h3>Checkit Analytics</h3>
+          <span class="tl-date">Mar 2026 - Present</span>
+        </div>
+        <p class="tl-role">Data Scientist Intern</p>
+        <p>
+          Developed NLP-driven financial analytics systems by fine-tuning transformer-based models for sentiment classification from news and earnings transcripts. Built end-to-end data pipelines to convert unstructured text into structured signals and integrated them into a ranking and screening system for scalable portfolio decision-making.
+        </p>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- UC LEAP -->
+      <a href="experience/exp2.html" class="timeline-item fade-in">
+        <div class="tl-header">
+          <h3>UC San Diego (MixLab / UC LEAP)</h3>
+          <span class="tl-date">Oct 2025 - Present</span>
+        </div>
+        <p class="tl-role">Research Intern (AI / LLM Systems)</p>
+        <p>
+          Built RAG-based multi-agent LLM systems to extract variables, datasets, and analysis workflows from scientific papers and reproduce research using multimodal experimental data, including Raman spectroscopy, AFM, and electronic transport measurements. Focused on improving scientific reproducibility and automating data-driven discovery through integrated AI systems.
+        </p>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- Concentrix -->
+      <a href="experience/exp3.html" class="timeline-item fade-in">
+        <div class="tl-header">
+          <h3>Concentrix</h3>
+          <span class="tl-date">Jun 2025 - Sep 2025</span>
+        </div>
+        <p class="tl-role">Data Scientist (Consulting)</p>
+        <p>
+          Built machine learning models on large-scale social listening data to analyze user engagement and product perception for Galaxy Watch 8. Delivered consulting insights by identifying key behavioral signals, driving improvements in product positioning and user interaction.
+        </p>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- Woori -->
+      <a href="experience/exp4.html" class="timeline-item fade-in">
+        <div class="tl-header">
+          <h3>Woori Financial Group</h3>
+          <span class="tl-date">Jul 2024 - Dec 2024</span>
+        </div>
+        <p class="tl-role">Data Engineer Intern</p>
+        <p>
+          Designed and deployed large-scale data infrastructure on AWS to support financial analytics and high-throughput transaction systems. Built automated CI/CD pipelines and optimized cloud architecture using Auto Scaling, Load Balancers, and Multi-AZ configurations, achieving high availability while reducing infrastructure costs by up to 35%.
+        </p>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+    <!-- ROKA -->
+    <a href="experience/exp5.html" class="timeline-item fade-in">
+      <div class="tl-header">
+        <h3>Republic of Korea Army</h3>
+        <span class="tl-date">Mar 2022 - Jun 2024</span>
+      </div>
+      <p class="tl-role">Military Police Officer / Platoon Leader</p>
+      <p>
+        Led a 30-member platoon, conducting regular counseling sessions and fostering strong team cohesion, communication, and leadership. Built a high-performing unit through structured guidance, mentorship, and operational coordination.
+      </p>
+      <span class="view-hint">View Details →</span>
+    </a>
+
+    </div>
+  </section>
+
+  <!-- ===== Research ===== -->
+  <section id="research">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">Research</h2>
+      <p class="section-subtitle">AI Research and Academic Work</p>
+    </div>
+
+    <div class="cards-grid cards-grid-2col">
+
+      <!-- UC LEAP -->
+      <a href="research/res1.html" class="card fade-in">
+        <span class="card-tag">Research Project</span>
+        <h3>UC LEAP: LLM-based Scientific Reproducibility</h3>
+        <p class="card-period">2025 - Present</p>
+        <p>
+          Built a multi-agent LLM system that connects scientific papers and experimental datasets.
+          Designed Literature and Experiment Agents to extract variables, reconstruct analyses,
+          and improve reproducibility through RAG-based feedback loops.
+        </p>
+        <div class="card-tags">
+          <span>LLMs</span>
+          <span>RAG</span>
+          <span>Multi-Agent</span>
+          <span>Scientific AI</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- Thesis -->
+      <a href="research/res2.html" class="card fade-in">
+        <span class="card-tag">Thesis</span>
+        <h3>Adaptation Disorders & Victimization</h3>
+        <p class="card-period">2024</p>
+        <p>
+          Conducted statistical analysis using SPSS and R to study how maladaptation driven by rigid gender norms affects crime victimization among North Korean defectors.
+          Applied labeling theory and logistic regression to uncover structural vulnerability patterns.
+        </p>
+        <div class="card-tags">
+          <span>Statistics</span>
+          <span>R</span>
+          <span>SPSS</span>
+          <span>Social Data</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== Personal Projects ===== -->
+  <section id="projects">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">Personal Projects</h2>
+      <p class="section-subtitle">Side projects and independent development work</p>
+    </div>
+    <div class="cards-grid">
+
+    <!-- Project 1 -->
+    <a href="project/proj1.html" class="card fade-in">
+      <span class="card-tag">Project</span>
+      <h3>Chicago Crime Risk Prediction & AI Insurance Chatbot</h3>
+      <p class="card-period">2025</p>
+      <p>
+        Built an end to end AI system that predicts regional crime risk from large scale Chicago crime data and delivers personalized insurance recommendations through a Flask API and GPT based chatbot.
+      </p>
+      <div class="card-tags">
+        <span>PySpark</span>
+        <span>XGBoost</span>
+        <span>Flask</span>
+        <span>GPT</span>
+      </div>
+      <span class="view-hint">View Details →</span>
+    </a>
+
+    <!-- Project 2 -->
+    <a href="project/proj2.html" class="card fade-in">
+      <span class="card-tag">Project</span>
+      <h3>Amazon Review based Product Uplift Prediction</h3>
+      <p class="card-period">2025</p>
+      <p>
+        Built a product analytics and AI pipeline that identifies revenue leakage in Amazon products, extracts customer pain points from reviews with GPT, and predicts uplift opportunities at the product level.
+      </p>
+      <div class="card-tags">
+        <span>GPT</span>
+        <span>Product Analytics</span>
+        <span>LightGBM</span>
+        <span>E-commerce AI</span>
+      </div>
+      <span class="view-hint">View Details →</span>
+    </a>
+    
+    <!-- Project 3 -->
+    <a href="project/proj3.html" class="card fade-in">
+      <span class="card-tag">Project</span>
+      <h3>CPTED Crime Risk Prediction on Spark Kubernetes</h3>
+      <p class="card-period">2025</p>
+      <p>
+        Built a large scale crime risk prediction system using PySpark and deployed it with a full CI/CD pipeline on Kubernetes, enabling real time risk assessment and insurance recommendation.
+      </p>
+      <div class="card-tags">
+        <span>PySpark</span>
+        <span>Kubernetes</span>
+        <span>CI/CD</span>
+        <span>MLOps</span>
+      </div>
+      <span class="view-hint">View Details →</span>
+    </a>
+    
+    </div>
+  </section>
+
+  <!-- ===== Certifications ===== -->
+  <section id="certifications">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtitle">Professional certifications and licenses</p>
+    </div>
+    <div class="cert-grid fade-in">
+      <div class="cert-item cert-item-landscape">
+        <img src="img/AWS.png" alt="AWS Certified Solutions Architect - Associate certificate" />
+      </div>
+      <div class="cert-item cert-item-portrait">
+        <img src="img/SQLD.png" alt="SQL Developer certification" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Volunteer ===== -->
+  <section id="volunteer">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">Community & Leadership</h2>
+      <p class="section-subtitle">Global engagement, leadership, and research contributions</p>
+    </div>
+
+    <div class="cards-grid cards-grid-2col">
+
+      <!-- Pyeongchang -->
+      <a href="volunteer/vol1.html" class="card fade-in">
+        <span class="card-tag">Award</span>
+        <h3>Pyeongchang Youth Peace Forum</h3>
+        <p class="card-period">2018</p>
+        <p>
+          Received 3rd Prize at the Youth Peace Challenge for proposing solutions to global peacebuilding issues during the Pyeongchang Olympics.
+        </p>
+        <div class="card-tags">
+          <span>Award</span>
+          <span>Global Policy</span>
+          <span>Peacebuilding</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- Good Neighbors -->
+      <a href="volunteer/vol2.html" class="card fade-in">
+        <span class="card-tag">Volunteer</span>
+        <h3>Good Neighbors</h3>
+        <p class="card-period">2019</p>
+        <p>
+          Facilitated group discussions with international participants to promote dialogue, conflict prevention, and cross-cultural communication.
+        </p>
+        <div class="card-tags">
+          <span>Leadership</span>
+          <span>Communication</span>
+          <span>Global Collaboration</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- WFUNA -->
+      <a href="volunteer/vol3.html" class="card fade-in">
+        <span class="card-tag">UN Program</span>
+        <h3>WFUNA (United Nations)</h3>
+        <p class="card-period">2020</p>
+        <p>
+          Presented SDG 16 sustainability initiatives at the United Nations, including construction waste reuse and digital divide solutions.
+        </p>
+        <div class="card-tags">
+          <span>UN</span>
+          <span>SDG 16</span>
+          <span>Sustainability</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+      <!-- Korea Peace Institute -->
+      <a href="volunteer/vol4.html" class="card fade-in">
+        <span class="card-tag">Research</span>
+        <h3>Korea Peace Institute</h3>
+        <p class="card-period">2021 - 2022</p>
+        <p>
+          Conducted research on North Korean human rights and social adaptation, supporting data collection and analysis for academic studies.
+        </p>
+        <div class="card-tags">
+          <span>Research</span>
+          <span>Human Rights</span>
+          <span>Data Analysis</span>
+        </div>
+        <span class="view-hint">View Details →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== Hobbies ===== -->
+  <section id="about-me">
+    <div class="fade-in">
+      <div class="divider"></div>
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">저의 취미와 관심사입니다.</p>
+    </div>
+    <div class="hobby-grid">
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">📚</div>
+        <h3>독서</h3>
+        <p>좋아하는 책 장르나 최근 읽은 책 등을 소개하세요.</p>
+      </div>
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">🏃</div>
+        <h3>운동</h3>
+        <p>즐기는 운동이나 건강 관리 습관을 적어보세요.</p>
+      </div>
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">🎵</div>
+        <h3>음악</h3>
+        <p>좋아하는 음악 장르나 악기 연주 등을 소개하세요.</p>
+      </div>
+      <div class="hobby-card fade-in">
+        <div class="hobby-icon">✈️</div>
+        <h3>여행</h3>
+        <p>여행 경험이나 가고 싶은 곳을 적어보세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

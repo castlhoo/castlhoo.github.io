@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UC LEAP | Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#research" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+      </svg>
+      Back to Research
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Research Project</span>
+      <h1>UC San Diego MixLab | UC LEAP</h1>
+      <p class="detail-role">Research Intern, AI and LLM Systems</p>
+      <div class="detail-meta">
+        <span>Oct 2025 - Present</span>
+        <span>Paper in preparation, expected June 2026</span>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+
+      <h2>Research Overview</h2>
+      <p>
+        I work on the UC LEAP project, a multi-campus initiative focused on building AI systems that integrate scientific literature, theory, and experimental data to enable automated scientific discovery.
+        My work specifically focuses on evaluating whether large language models can understand scientific papers and reproduce key experimental analyses using real datasets.
+      </p>
+
+      <h2>Project Links</h2>
+      <ul>
+        <li><a href="https://sites.google.com/view/uc-leap/home" target="_blank">UC LEAP Official Site</a></li>
+        <li><a href="https://engineering.ucsb.edu/news/leap-forward-ai-enabled-materials-research" target="_blank">UCSB Engineering Article</a></li>
+        <li><a href="https://zhiting.ucsd.edu/" target="_blank">Zhiting Hu Lab</a></li>
+      </ul>
+
+      <h2>My Role</h2>
+      <p>
+        I design and build a multi-agent LLM system composed of a Literature Agent and an Experiment Agent.
+        My goal is to bridge scientific papers and experimental data, enabling models to move beyond text understanding into executable scientific analysis and reproducible results.
+      </p>
+
+      <!-- ===================== -->
+      <!-- Literature Agent -->
+      <!-- ===================== -->
+
+      <h2>Literature Agent</h2>
+      <p>
+        I built a RAG-based pipeline that transforms scientific papers into structured, machine-readable knowledge.
+        Instead of simple summarization, the system extracts experimental variables, dataset references, and analysis workflows that can be directly used by downstream agents.
+      </p>
+
+      <ul>
+        <li>Parsed papers into chunks and embedded them into a vector database (ChromaDB)</li>
+        <li>Extracted key variables such as filling factor, magnetic field, and measurement signals</li>
+        <li>Mapped paper descriptions to actual dataset structures (annotation, raw_data, figure_db)</li>
+        <li>Designed domain-specific prompts to enforce grounded, dataset-aware reasoning</li>
+      </ul>
+
+
+      <!-- ===================== -->
+      <!-- Experiment Agent -->
+      <!-- ===================== -->
+
+      <h2>Experiment Agent</h2>
+      <p>
+        I developed an Experiment Agent that executes scientific analysis using multimodal experimental data.
+        The system reconstructs figures and analyses reported in papers using real datasets such as Raman spectroscopy, AFM measurements, and electronic transport data.
+      </p>
+
+      <ul>
+        <li>Inspected dataset structures and identified relevant measurement columns</li>
+        <li>Mapped conceptual variables from papers to actual data fields</li>
+        <li>Reconstructed plots and scientific outputs from raw experimental data</li>
+        <li>Compared generated outputs against ground-truth paper figures</li>
+      </ul>
+
+      <div class="image-gallery">
+        <img src="../experience/slides/exp2-slide2.jpg" />
+      </div>
+
+      <!-- ===================== -->
+      <!-- Prompt / Task Design -->
+      <!-- ===================== -->
+
+      <h2>Prompt Engineering and Task Design</h2>
+      <p>
+        I designed structured prompts and task workflows to guide LLMs in scientific reasoning.
+        This includes enforcing step-by-step execution, restricting available data sources, and aligning model outputs with experimental workflows.
+      </p>
+
+      <ul>
+        <li>Designed task.json-based execution workflows</li>
+        <li>Enforced dataset-grounded reasoning constraints</li>
+        <li>Tested different prompting strategies for accuracy improvement</li>
+      </ul>
+
+      <div class="image-gallery">
+        <img src="../experience/slides/exp2-slide4.jpg" />
+      </div>
+
+      <!-- ===================== -->
+      <!-- Evaluation -->
+      <!-- ===================== -->
+
+      <h2>Benchmarking and Feedback</h2>
+      <p>
+        I built an evaluation system to quantitatively measure how well models reproduce scientific analyses.
+        Each output is scored across multiple dimensions, and the results are used to identify failure cases and guide improvements.
+      </p>
+
+      <ul>
+        <li>Evaluated outputs across multiple dimensions (accuracy, completeness, reasoning)</li>
+        <li>Compared performance across different LLMs (GPT, Claude, Gemini)</li>
+        <li>Analyzed efficiency using token usage and cost metrics</li>
+      </ul>
+
+      <div class="image-gallery">
+        <img src="../experience/slides/exp2-slide6.jpg" />
+      </div>
+
+      <!-- ===================== -->
+      <!-- RAG Feedback Loop -->
+      <!-- ===================== -->
+
+      <h2>RAG-based Iterative Improvement</h2>
+      <p>
+        I implemented a feedback-driven RAG loop that identifies model weaknesses and improves outputs iteratively.
+        The system retrieves targeted context and applies it to refine both reasoning and code execution.
+      </p>
+
+      <ul>
+        <li>Detected weak dimensions using evaluation scores</li>
+        <li>Retrieved relevant context using RAG</li>
+        <li>Repaired model outputs through guided re-execution</li>
+      </ul>
+
+      <div class="image-gallery">
+        <img src="../experience/slides/exp2-slide7.jpg" />
+        <img src="../experience/slides/exp2-slide8.jpg" />
+        <img src="../experience/slides/exp2-slide9.jpg" />
+      </div>
+
+      <!-- ===================== -->
+      <!-- Results -->
+      <!-- ===================== -->
+
+      <h2>Results</h2>
+      <p>
+        Retrieval-grounded workflows significantly improved scientific plot reconstruction and reduced failure cases.
+        The model outputs after RAG show stronger alignment with original paper figures compared to baseline outputs.
+      </p>
+
+      <div class="image-gallery">
+        <img src="../experience/slides/exp2-slide10.jpg" />
+      </div>
+
+      <!-- ===================== -->
+      <!-- Paper -->
+      <!-- ===================== -->
+
+      <h2>Paper Status</h2>
+      <p>
+        This work is currently in progress, and I am preparing a paper submission targeted for June 2026.
+        The paper focuses on building literature-grounded and experiment-grounded LLM agents for scientific reproducibility and automated analysis.
+      </p>
+
+      <div class="detail-tags">
+        <span>LLMs</span>
+        <span>RAG</span>
+        <span>Multi-Agent Systems</span>
+        <span>Scientific AI</span>
+        <span>Multimodal Data</span>
+        <span>Benchmarking</span>
+      </div>
+
+    </div>

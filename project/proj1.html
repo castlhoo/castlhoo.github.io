@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chicago Crime Risk Prediction & AI Insurance Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#projects" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+      </svg>
+      Back to Projects
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Project</span>
+      <h1>Chicago Crime Risk Prediction & AI Insurance Chatbot</h1>
+      <div class="detail-meta">
+        <span>2025</span>
+        <span>Personal Project</span>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+      <h2>Overview</h2>
+      <p>
+      This project is an end to end AI system that predicts regional crime risk from large scale public safety data and translates those predictions into actionable insurance recommendations through a conversational interface.
+
+      Rather than stopping at model prediction, I designed the pipeline to connect data engineering, feature engineering, model optimization, and AI deployment into one integrated system.
+      </p>
+
+      <h2>Problem Statement</h2>
+      <p>
+      Public crime datasets are complex and difficult for non technical users to interpret.
+
+      The goal of this project was to not only predict crime risk, but also convert those predictions into intuitive, user friendly insights and personalized insurance recommendations using a GPT based chatbot.
+      </p>
+
+      <h2>Final Analytical Output</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-6.jpg" alt="Dashboard overview" />
+      </div>
+      <p>
+      This dashboard summarizes the final output of the project, combining regional crime distribution, category level analysis, and severity based risk scoring.
+
+      I focused on making the results interpretable so users can quickly understand where risk is concentrated and what factors are driving it.
+      </p>
+
+      <h2>System Architecture</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-1.jpg" alt="System architecture" />
+      </div>
+      <p>
+      The system starts with Kaggle crime data, followed by PySpark based preprocessing and feature engineering.
+
+      I then trained multiple models including XGBoost, Random Forest, and LightGBM, and deployed the best model through a Flask API.
+
+      Finally, I integrated the system with a GPT based chatbot to enable natural language interaction.
+      </p>
+
+      <h2>1. Data Preprocessing</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-2.jpg" alt="Preprocessing code" />
+      </div>
+      <p>
+      I processed about 237 thousand crime records using PySpark.
+
+      This included data cleaning, handling missing values, and standardizing fields such as crime type, location, and timestamp.
+
+      I also mapped raw location descriptions into structured categories to make the dataset suitable for modeling.
+      </p>
+
+      <h2>2. Feature Engineering</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-3.jpg" alt="Feature engineering" />
+      </div>
+      <p>
+      I engineered over 100 features capturing temporal patterns such as hour, weekday, and season, as well as geographic and severity based risk indicators.
+
+      In particular, I designed composite risk features by combining location based risk and crime severity, which significantly improved model performance.
+      </p>
+
+      <h2>3. Modeling and Evaluation</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-4.jpg" alt="Model results" />
+      </div>
+      <p>
+      I compared XGBoost, Random Forest, and LightGBM using accuracy, F1 score, and validation performance.
+
+      XGBoost performed best with 89.96 percent test accuracy and strong generalization, making it the final model for deployment.
+      </p>
+
+      <h2>4. AI Application Layer</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-5.jpg" alt="Flask GPT integration" />
+      </div>
+      <p>
+      I deployed the model as a Flask API and integrated it with a GPT based chatbot.
+
+      The system takes user location as input, predicts crime risk, and generates personalized insurance recommendations in natural language.
+
+      This transforms the project from a prediction model into a user facing AI application.
+      </p>
+
+      <h2>What This Project Demonstrates</h2>
+      <ul>
+        <li>Large scale data processing with PySpark</li>
+        <li>Feature engineering for structured risk modeling</li>
+        <li>Model comparison and performance optimization</li>
+        <li>Flask based API deployment</li>
+        <li>GPT integration for real world AI applications</li>
+      </ul>
+
+      <h2>Why This Project Matters</h2>
+      <p>
+      This project shows my ability to build a complete AI system from data processing to deployment.
+
+      More importantly, it demonstrates how I connect machine learning models with real user experiences by translating predictions into actionable insights.
+      </p>
+
+
+      <div class="detail-tags">
+        <span>PySpark</span>
+        <span>XGBoost</span>
+        <span>Flask API</span>
+        <span>GPT</span>
+        <span>Machine Learning</span>
+        <span>AI Engineer</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>

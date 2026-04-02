@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woori Financial Group | Work Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../detail.css" />
+</head>
+<body>
+  <div class="detail-container">
+    <a href="../index.html#experience" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      Back to Experience
+    </a>
+
+    <div class="detail-header">
+      <span class="detail-tag">Work Experience</span>
+      <h1>Woori Financial Group</h1>
+      <p class="detail-role">Data Engineer Intern</p>
+      <div class="detail-meta">
+        <span>Jul 2024 - Dec 2024</span>
+        <span>South Korea</span>
+      </div>
+      <div class="detail-links">
+        <a href="https://github.com/Coconut-Finance-Team" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          GitHub Repository
+        </a>
+      </div>
+    </div>
+
+    <div class="detail-divider"></div>
+
+    <div class="detail-body">
+      <h2>Overview</h2>
+      <p>
+        At Woori Financial Group, I worked on cloud based data engineering and AWS infrastructure for financial
+        services. My focus was on building reliable and scalable systems that could support high traffic workloads,
+        automated deployment, and efficient cloud operations. This experience strengthened my ability to work
+        across both data engineering and cloud platform architecture.
+      </p>
+
+      <h2>Key Responsibilities</h2>
+      <ul>
+        <li>
+          Designed a high availability AWS architecture to support production grade financial systems under
+          heavy request volume.
+        </li>
+        <li>
+          Built automated CI and CD workflows using GitHub, Jenkins, ECR, and ArgoCD to improve deployment
+          and operational reliability.
+        </li>
+        <li>
+          Optimized cloud infrastructure using Auto Scaling, Load Balancers, and RDS Multi AZ configurations.
+        </li>
+        <li>
+          Supported data management and analytics related infrastructure in a banking and financial services
+          environment.
+        </li>
+      </ul>
+
+      <h2>Achievements</h2>
+      <ul>
+        <li>
+          Helped achieve zero downtime under 10,000 requests by contributing to a fault tolerant and highly
+          available AWS architecture.
+        </li>
+        <li>
+          Reduced infrastructure costs by 25 to 35 percent through cloud architecture optimization.
+        </li>
+        <li>
+          Built hands on experience in cloud systems, DevOps workflows, and large scale data infrastructure
+          in a real financial environment.
+        </li>
+      </ul>
+
+      <div class="detail-tags">
+        <span>AWS</span>
+        <span>Data Engineering</span>
+        <span>CI/CD</span>
+        <span>Jenkins</span>
+        <span>ArgoCD</span>
+        <span>Cloud Infrastructure</span>
+      </div>
+
+      <div class="portfolio-slides">
+        <h2>Portfolio</h2>
+        <div class="slides-grid">
+          <img src="slides/19.jpg" alt="Woori Financial Group Slide 1" />
+          <img src="slides/20.jpg" alt="Woori Financial Group Slide 2" />
+          <img src="slides/21.jpg" alt="Woori Financial Group Slide 3" />
+          <img src="slides/22.jpg" alt="Woori Financial Group Slide 4" />
+          <img src="slides/23.jpg" alt="Woori Financial Group Slide 5" />
+          <img src="slides/24.jpg" alt="Woori Financial Group Slide 6" />
+          <img src="slides/25.jpg" alt="Woori Financial Group Slide 7" />
+          <img src="slides/26.jpg" alt="Woori Financial Group Slide 8" />
+          <img src="slides/27.jpg" alt="Woori Financial Group Slide 9" />
+          <img src="slides/28.jpg" alt="Woori Financial Group Slide 10" />
+          <img src="slides/29.jpg" alt="Woori Financial Group Slide 11" />
+          <img src="slides/30.jpg" alt="Woori Financial Group Slide 12" />
+          <img src="slides/31.jpg" alt="Woori Financial Group Slide 13" />
+          <img src="slides/32.jpg" alt="Woori Financial Group Slide 14" />
+          <img src="slides/33.jpg" alt="Woori Financial Group Slide 15" />
+          <img src="slides/34.jpg" alt="Woori Financial Group Slide 16" />
+          <img src="slides/35.jpg" alt="Woori Financial Group Slide 17" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    document.querySelectorAll('.slides-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+  </script>
+
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
+</body>
+</html>
