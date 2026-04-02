@@ -3,18 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amazon Review based Product Uplift Prediction</title>
+  <title>Chicago Crime Risk Prediction & AI Insurance Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../detail.css" />
 </head>
-
 <body>
   <div class="detail-container">
-
-    <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+    <a href="../index.html#projects" class="back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+      </svg>
+      Back to Projects
+    </a>
 
     <div class="detail-header">
       <span class="detail-tag">Project</span>
-      <h1>Amazon Review based Product Uplift Prediction</h1>
+      <h1>Chicago Crime Risk Prediction & AI Insurance Chatbot</h1>
       <div class="detail-meta">
         <span>2025</span>
         <span>Personal Project</span>
@@ -25,126 +31,103 @@
 
     <div class="detail-body">
 
-      <!-- OVERVIEW -->
       <h2>Overview</h2>
       <p>
-        This project investigates why many e-commerce products fail to generate revenue despite high discounts and strong ratings.
-        I built a product-level analytics and AI pipeline that combines structured data with GPT-based review analysis to identify revenue leakage and predict improvement potential.
+        This project is an end to end AI system that predicts regional crime risk from large scale public safety data and converts those predictions into practical insurance recommendations through a conversational interface. I designed the workflow to connect data engineering, machine learning, and AI application development in one pipeline, moving from raw Chicago crime data to a user facing GPT based recommendation system. :contentReference[oaicite:1]{index=1}
       </p>
 
-      <!-- PROBLEM -->
-      <h2>Problem Framing</h2>
+      <h2>Problem Statement</h2>
+      <p>
+        Public crime datasets are difficult for most users to interpret directly. I wanted to build a system that not only estimates neighborhood level crime risk, but also explains that risk in a more accessible way and translates it into actionable insurance guidance. The final result was a prediction pipeline paired with an AI chatbot that helps users understand local risk and receive more personalized recommendations. :contentReference[oaicite:2]{index=2}
+      </p>
 
+      <h2>Final Product View</h2>
       <div class="image-gallery">
-        <img src="slides/proj2-1.jpg" alt="Problem Statement" />
+        <img src="slides/proj1-6.jpg" alt="Final dashboard view" />
       </div>
-
       <p>
-        The core business question was whether higher discounts actually drive revenue.
-        Initial observations showed inconsistent performance across products, suggesting that pricing and ratings alone are insufficient indicators of sales outcomes.
+        This dashboard view represents the final analytical output of the project. It combines regional crime distribution, area level risk visualization, category level crime patterns, and severity analysis into one interface. The goal here was to make the model output interpretable, not just accurate, so users and decision makers could immediately see which areas and crime categories were driving risk. :contentReference[oaicite:3]{index=3}
       </p>
 
-      <ul>
-        <li>Does higher discount increase revenue?</li>
-        <li>Are ratings predictive of performance?</li>
-        <li>Where does revenue leakage occur?</li>
-      </ul>
-
-      <!-- CATEGORY ANALYSIS -->
-      <h2>Category-Level Revenue Patterns</h2>
-
+      <h2>System Architecture</h2>
       <div class="image-gallery">
-        <img src="slides/proj2-2.jpg" alt="Category Analysis" />
+        <img src="slides/proj1-1.jpg" alt="System architecture diagram" />
       </div>
-
       <p>
-        Revenue is highly concentrated in the 45%–55% discount range, indicating that moderate discounting maximizes efficiency.
-        Increasing discounts beyond this range does not proportionally increase revenue, showing clear diminishing returns.
+        This architecture diagram shows the full system flow. I started from the Kaggle crime dataset and used Tableau for exploratory analysis and Spark based modeling for scalable learning. After comparing multiple machine learning models, I exposed the best model through a Flask API and connected it with a GPT based chatbot so users could interact with the system through natural language rather than raw prediction tables. This project was intentionally built as both a data science workflow and an AI product prototype. :contentReference[oaicite:4]{index=4}
       </p>
 
-      <!-- COST EFFECTIVENESS -->
-      <h2>Discount vs Revenue Efficiency</h2>
-
+      <h2>Data Preprocessing</h2>
       <div class="image-gallery">
-        <img src="slides/proj2-3.jpg" alt="Cost Effectiveness" />
+        <img src="slides/proj1-2.jpg" alt="Data preprocessing code and transformations" />
       </div>
-
       <p>
-        The cost-effectiveness analysis further confirms that revenue peaks at moderate discount levels.
-        Products with excessive discounts often fail to generate meaningful revenue, highlighting pricing inefficiency.
+        I began with a Chicago crime dataset containing about 237 thousand records. Using PySpark, I cleaned the data, handled missing values, and standardized important fields such as crime type, location category, and timestamp information so the dataset could be used reliably for modeling. I also created normalized categorical structures that made later feature generation and model training much more consistent. :contentReference[oaicite:5]{index=5}
       </p>
 
-      <!-- FAILURE CASE -->
-      <h2>Failure of Traditional Metrics</h2>
-
+      <h2>Feature Engineering</h2>
       <div class="image-gallery">
-        <img src="slides/proj2-4.jpg" alt="Unprofitable Products" />
+        <img src="slides/proj1-3.jpg" alt="Feature engineering examples" />
       </div>
-
       <p>
-        Many products with ratings above 4.0 still generate minimal revenue.
-        This demonstrates that ratings and discount rates have limited explanatory power and fail to capture true product performance.
+        After cleaning the dataset, I engineered more than 100 features. These included temporal patterns such as hour of day, weekday, and season, as well as geographic risk indicators and crime severity related variables. In particular, I designed area risk scores, location risk features, and severity based scoring logic so that the model could capture both where crimes happen and how serious those crimes are. This step was one of the most important parts of the project because it transformed raw event data into structured signals that meaningfully improved predictive power. :contentReference[oaicite:6]{index=6}
       </p>
 
-      <!-- CORE INSIGHT -->
+      <h2>Modeling and Evaluation</h2>
       <div class="image-gallery">
-        <img src="slides/proj2-5.jpg" alt="Insight Summary" />
+        <img src="slides/proj1-4.jpg" alt="Model comparison and ranking" />
       </div>
-
       <p>
-        A distinct group of high-discount, low-revenue products emerges.
-        This reveals that underperformance is driven by product-level issues rather than pricing alone.
+        I trained and compared multiple models including XGBoost, Random Forest, and LightGBM. Among them, XGBoost achieved the strongest overall performance with 89.96% test accuracy, 89.05% test F1, and 89.76% validation accuracy. I also compared the models in terms of overfitting and training time so that the final selection balanced predictive strength with practical deployment considerations. This made the project more than a pure leaderboard exercise because the final model needed to be both accurate and usable in an application setting. :contentReference[oaicite:7]{index=7}
       </p>
 
-      <!-- AI PART -->
-      <h2>AI Driven Uplift Modeling</h2>
-
+      <h2>AI Application Layer</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-5.jpg" alt="Flask API and GPT chatbot integration" />
+      </div>
       <p>
-        To identify root causes, I used GPT to analyze customer reviews and extract product-level pain points.
-        These insights were transformed into structured features and incorporated into a predictive uplift model.
+        Once the model was selected, I deployed it as a Flask API and integrated it with a GPT based chatbot. The API accepts user information such as region and housing type, runs the underlying crime risk prediction, and returns structured output that the GPT layer can turn into a more natural recommendation. This means the system does not simply output a score. Instead, it explains risk in plain language and links that risk to personalized insurance suggestions, which made the project feel much closer to a real product experience. :contentReference[oaicite:8]{index=8}
       </p>
 
-      <ul>
-        <li>GPT-based review analysis → pain point extraction</li>
-        <li>Feature engineering from unstructured text</li>
-        <li>Uplift modeling to estimate revenue improvement</li>
-      </ul>
-
-      <p>
-        Across 1,737 products, the model identified 257 products (14.8%) with clear improvement potential.
-        This confirmed that product-level issues, not pricing alone, drive underperformance.
-      </p>
-
-      <!-- IMPACT -->
-      <h2>Impact</h2>
-
-      <ul>
-        <li>Identified inefficiencies in discount-based pricing strategies</li>
-        <li>Discovered hidden low-performance product segments</li>
-        <li>Converted customer reviews into actionable business insights</li>
-        <li>Enabled data-driven product improvement prioritization</li>
-      </ul>
-
-      <!-- POSITIONING -->
       <h2>What This Project Demonstrates</h2>
+      <p>
+        This project demonstrates that I can work across the full applied AI stack. On the data side, it shows large scale preprocessing and feature engineering with PySpark. On the modeling side, it shows model comparison, evaluation, and performance driven selection. On the application side, it shows how to wrap a predictive model inside an API and connect it with a GPT based conversational layer to create a more user centered AI system. :contentReference[oaicite:9]{index=9}
+      </p>
 
       <ul>
-        <li>Product Data Science and business-driven analytics</li>
-        <li>LLM application for real-world problem solving</li>
-        <li>Uplift modeling and causal thinking</li>
-        <li>Integration of structured and unstructured data</li>
+        <li>Large scale tabular data processing with PySpark</li>
+        <li>Feature engineering for crime risk modeling</li>
+        <li>Model comparison across XGBoost, Random Forest, and LightGBM</li>
+        <li>Flask API deployment for model serving</li>
+        <li>GPT integration for natural language recommendations</li>
       </ul>
+
+      <h2>Why This Project Matters for My Role</h2>
+      <p>
+        This project best represents the intersection of my AI Engineer and Data Scientist profile. It shows that I do not stop at training models in isolation. I also think about data structure, feature design, system architecture, deployment, and how model outputs are experienced by real users. That combination of predictive modeling and product oriented AI design is exactly the type of work I want to continue building.
+      </p>
+
+      <h2>Project PDF</h2>
+      <p>Add your project PDF here.</p>
+      <div class="pdf-slot">
+        <a href="YOUR_PROJECT_PDF_LINK_HERE" target="_blank" class="pdf-button">
+          View Project PDF
+        </a>
+      </div>
 
       <div class="detail-tags">
+        <span>PySpark</span>
+        <span>XGBoost</span>
+        <span>Flask API</span>
         <span>GPT</span>
-        <span>Product Analytics</span>
-        <span>Uplift Modeling</span>
-        <span>LLM</span>
-        <span>E-commerce</span>
+        <span>Machine Learning</span>
+        <span>AI Engineer</span>
       </div>
-
     </div>
   </div>
 
+  <div class="detail-footer">
+    <p>&copy; 2026 Seongho Kim. All rights reserved.</p>
+  </div>
 </body>
 </html>
