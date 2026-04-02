@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CPTED Crime Risk Prediction on Spark Kubernetes</title>
+  <title>CPTED Crime Risk Prediction with Spark on Kubernetes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -20,7 +20,7 @@
 
     <div class="detail-header">
       <span class="detail-tag">Project</span>
-      <h1>CPTED Crime Risk Prediction on Spark Kubernetes</h1>
+      <h1>CPTED Crime Risk Prediction with Spark on Kubernetes</h1>
       <div class="detail-meta">
         <span>2025</span>
         <span>Personal Project</span>
@@ -33,118 +33,19 @@
 
       <h2>Overview</h2>
       <p>
-        This project is an end to end machine learning and MLOps system designed to predict residential crime risk using CPTED, or Crime Prevention Through Environmental Design, concepts. I built the workflow around large scale PySpark modeling and production style deployment so that the model could move beyond notebook experimentation into an automated and scalable serving pipeline for insurance related decision support. 
+        This project is an <strong>end-to-end machine learning and MLOps system</strong> designed to predict residential crime risk
+        using CPTED (Crime Prevention Through Environmental Design) concepts. I built the workflow around
+        large-scale PySpark modeling and production-style deployment so that the model could move beyond
+        notebook experimentation into an <strong>automated and scalable serving pipeline</strong> for insurance-related decision support.
       </p>
 
       <h2>Problem Statement</h2>
       <p>
-        The main goal was to operationalize crime risk prediction in a way that supports real world usage. Instead of stopping at training a model, I wanted to build a complete system that could process structured crime related inputs, generate risk predictions, and deploy those predictions through a repeatable CI/CD workflow. In the final design, insurance agents could use the system to estimate residential crime risk and recommend appropriate home insurance products. :contentReference[oaicite:2]{index=2}
-      </p>
-
-      <h2>Core Architecture</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-4.png" alt="Project technology stack" />
-      </div>
-      <p>
-        This image summarizes the core technologies I used in the project. GitHub served as the source control layer, PySpark handled large scale model development, Jenkins automated CI/CD tasks, Docker provided a reproducible runtime environment, and Kubernetes enabled scalable deployment. The project was intentionally structured as a production oriented ML system rather than a standalone modeling exercise. 
-      </p>
-
-      <div class="image-gallery">
-        <img src="slides/proj3-8.png" alt="Project tool relationship diagram" />
-        <img src="slides/proj3-5.png" alt="Full system architecture diagram" />
-      </div>
-      <p>
-        These diagrams show the full system flow. Code changes are pushed to GitHub, Jenkins is triggered through webhook integration, Docker images are built and pushed to Docker Hub, and the containerized application is deployed to Kubernetes. This architecture was designed to automate the full path from model update to production release, reducing manual deployment work and improving consistency across runs. 
-      </p>
-
-      <h2>Data and Modeling</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-3.png" alt="CPTED training dataset sample" />
-      </div>
-      <p>
-        The model uses CPTED related inputs such as Accessibility, Surveillance, and Crime Count to predict a Risk Score for each apartment or residential location. I framed these as structured features for supervised learning, where higher risk scores indicate greater crime vulnerability. The dataset preparation and prediction setup were implemented with PySpark so the workflow could scale more naturally than a small local script based pipeline. :contentReference[oaicite:5]{index=5}
-      </p>
-
-      <ul>
-        <li>Features: Accessibility, Surveillance, Crime Count</li>
-        <li>Target: Risk Score</li>
-        <li>Framework: PySpark ML</li>
-        <li>Model: Random Forest classifier within a PySpark pipeline</li>
-      </ul>
-
-      <p>
-        In the modeling code, I created a Spark session, loaded the training CSV, selected the required columns, adjusted risk score values where needed, assembled feature vectors, and trained a Random Forest based pipeline. I then loaded test data and generated predictions using the trained pipeline model, which made the workflow reusable for both training and inference. :contentReference[oaicite:6]{index=6}
-      </p>
-
-      <h2>Webhook and CI Trigger</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-1.jpg" alt="GitHub webhook configuration" />
-        <img src="slides/proj3-2.png" alt="Ngrok tunnel status" />
-      </div>
-      <p>
-        These screenshots show how I connected GitHub and Jenkins through webhook automation. Because Jenkins was running in a local environment, I used ngrok to expose a public tunnel and configured GitHub webhooks to send build events to the Jenkins endpoint. This allowed code pushes to trigger the pipeline automatically, which is a key step in building a real CI workflow rather than manually running deployments. 
-      </p>
-
-      <h2>Build and Containerization</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-9.png" alt="Docker Hub repository" />
-        <img src="slides/proj3-10.png" alt="Docker push success log" />
-      </div>
-      <p>
-        After Jenkins detected a change, it built a Docker image for the PySpark prediction service and pushed the image to Docker Hub. These screenshots show both the target repository and a successful push result from the pipeline log. This step was critical because it turned the model runtime into a portable artifact that could be consistently deployed in the Kubernetes environment. 
-      </p>
-
-      <div class="image-gallery">
-        <img src="slides/proj3-14.png" alt="Multi stage Docker build concept" />
-        <img src="slides/proj3-11.png" alt="Docker caching concept" />
-      </div>
-      <p>
-        I also focused on optimizing the image build process. These images represent the two main optimization ideas I applied. First, multi stage Docker builds help separate build dependencies from runtime dependencies, which reduces the final image size. Second, Docker layer caching reuses unchanged build layers, which lowers rebuild time for repeated pipeline executions. Both ideas were used to make the deployment pipeline faster and more efficient. :contentReference[oaicite:9]{index=9}
-      </p>
-
-      <h2>Jenkins Pipeline and Deployment Automation</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-15.png" alt="Jenkins pipeline stages overview" />
-        <img src="slides/proj3-6.png" alt="Jenkins kubeconfig credentials" />
-      </div>
-      <p>
-        These screenshots highlight the deployment automation side of the project. Jenkins was responsible not only for build and push steps, but also for handling credentials securely and executing deployment steps into Kubernetes. I stored the Kubernetes access configuration as Jenkins credentials and referenced that credential during deployment, which is much closer to how production CI/CD systems manage sensitive infrastructure access. 
-      </p>
-
-      <h2>Kubernetes Deployment and Serving</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-7.png" alt="Kubectl apply success log" />
-        <img src="slides/proj3-13.png" alt="Kubernetes service dashboard" />
-      </div>
-      <p>
-        These images show the final deployment stage. Jenkins used kubectl with the stored kubeconfig to apply the deployment configuration, and the logs show a successful apply result. The Kubernetes dashboard confirms that the service was created and exposed as `crime-prediction-service`, which demonstrates that the model had been promoted from a build artifact into a running cluster service. 
-      </p>
-
-      <h2>Pipeline Optimization Result</h2>
-      <div class="image-gallery">
-        <img src="slides/proj3-16.png" alt="Before optimization Jenkins build result" />
-        <img src="slides/proj3-12.png" alt="After optimization Jenkins build result" />
-      </div>
-      <p>
-        These screenshots show the measurable impact of the optimization work. Before optimization, the total deployment pipeline took about 2 minutes and 4 seconds. After applying the improved build strategy, the total time dropped to about 1 minute and 38 seconds. This reduction of roughly 30 seconds matters because repeated CI/CD runs compound quickly, especially when working with containerized ML systems and larger datasets. 
-      </p>
-
-      <h2>Results and Impact</h2>
-      <p>
-        The final outcome was a complete ML production pipeline that starts from GitHub code updates and ends with a deployed Kubernetes service. From a machine learning perspective, the project demonstrated how CPTED based structured features can be used for residential crime risk prediction. From an engineering perspective, it showed that I can connect model development with CI/CD, containerization, orchestration, and deployment optimization in a single end to end workflow. 
-      </p>
-
-      <ul>
-        <li>Built a PySpark based crime risk prediction workflow</li>
-        <li>Automated CI/CD using GitHub, ngrok, and Jenkins</li>
-        <li>Containerized the prediction service with Docker</li>
-        <li>Deployed the service to Kubernetes</li>
-        <li>Reduced deployment time through build optimization</li>
-      </ul>
-
-      <h2>Why This Project Matters for My Role</h2>
-      <p>
-        This project best represents my AI Engineer and Data Engineer side because it goes beyond model training and focuses on production readiness. It shows that I can build systems where machine learning, infrastructure, automation, and deployment are tightly connected. That is the kind of work I want to continue doing in roles that sit between applied AI, data systems, and real world product delivery.
+        The main goal was to <strong>operationalize crime risk prediction</strong> in a way that supports real-world usage.
+        Instead of stopping at training a model, I wanted to build a complete system that could process structured
+        crime-related inputs, generate risk predictions, and deploy those predictions through a
+        <strong>repeatable CI/CD workflow</strong>. In the final design, insurance agents could use the system to estimate
+        residential crime risk and recommend appropriate home insurance products.
       </p>
 
       <div class="detail-tags">
@@ -155,6 +56,168 @@
         <span>Kubernetes</span>
         <span>MLOps</span>
       </div>
+
+      <div class="detail-divider"></div>
+
+      <h2>Project Walkthrough</h2>
+
+      <h2>1. Technology Stack & System Architecture</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-8.png" alt="Full technology stack: GitHub, PySpark, Docker, Jenkins, Kubernetes" />
+      </div>
+      <p>
+        The project uses five core technologies:
+        <strong>GitHub</strong> for source control,
+        <strong>PySpark</strong> for large-scale model development,
+        <strong>Jenkins</strong> for CI/CD automation,
+        <strong>Docker</strong> for containerization, and
+        <strong>Kubernetes</strong> for scalable deployment and serving.
+      </p>
+
+      <div class="image-gallery">
+        <img src="slides/proj3-2.png" alt="End-to-end system architecture diagram" />
+      </div>
+      <p>
+        The full system architecture: a developer pushes code to GitHub, which triggers Jenkins via <strong>ngrok webhook</strong>.
+        Jenkins builds a Docker image and deploys it to Kubernetes, where the prediction service is exposed to
+        end users — <strong>insurance agents</strong> and <strong>customers</strong> — on an Ubuntu-based infrastructure.
+      </p>
+
+      <h2>2. Data and Modeling</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-1.jpg" alt="CPTED training dataset with Accessibility, Surveillance, Crime Count, Risk Score" />
+      </div>
+      <p>
+        The model uses <strong>CPTED-related structured features</strong> to predict a Risk Score for each apartment or residential location:
+      </p>
+      <ul>
+        <li><strong>Features</strong> — Accessibility, Surveillance, Crime Count</li>
+        <li><strong>Target</strong> — Risk Score (higher = greater crime vulnerability)</li>
+        <li><strong>Framework</strong> — PySpark ML with Random Forest classifier</li>
+      </ul>
+      <p>
+        I created a Spark session, loaded the training CSV, assembled feature vectors, and trained a
+        <strong>Random Forest pipeline</strong>. The workflow was designed to be reusable for both training and inference
+        at scale, not just a one-off notebook experiment.
+      </p>
+
+      <h2>3. Webhook and CI Trigger</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-4.png" alt="GitHub webhook configuration pointing to ngrok URL" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/proj3-3.png" alt="Ngrok tunnel forwarding to localhost Jenkins" />
+      </div>
+      <p>
+        Since Jenkins was running locally, I used <strong>ngrok</strong> to expose a public tunnel
+        (<code>https://f06a-182-221-118-26.ngrok-free.app</code>) and configured
+        <strong>GitHub Webhooks</strong> to send push events to the Jenkins endpoint.
+        This allowed every <strong>git push to automatically trigger the full CI/CD pipeline</strong>
+        — a key step in making the system behave like a real production workflow.
+      </p>
+
+      <h2>4. Jenkins Pipeline Design</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-13.png" alt="Jenkins pipeline stages: Build, Test, Browser Tests, Dev, Staging, Production" />
+      </div>
+      <p>
+        The Jenkins pipeline was structured with <strong>clearly separated stages</strong>:
+        Build → Test (DBUnit, JUnit, Jasmine) → Browser Tests (Chrome, Edge, Firefox) → Dev → Staging → Production.
+        Each stage must pass before proceeding, ensuring <strong>quality gates</strong> at every step of the deployment process.
+      </p>
+
+      <h2>5. Build and Containerization</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-7.png" alt="Docker Hub repository: castlehoo/crime_prediction_image" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/proj3-6.png" alt="Jenkins log showing successful Docker push" />
+      </div>
+      <p>
+        After Jenkins detected a code change, it built a <strong>Docker image</strong> for the PySpark prediction service
+        and pushed it to <strong>Docker Hub</strong> (<code>castlehoo/crime_prediction_image</code>).
+        This turned the model runtime into a <strong>portable artifact</strong> that could be consistently deployed
+        in the Kubernetes environment.
+      </p>
+
+      <h2>6. Docker Build Optimization</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-12.png" alt="Multi-stage Docker build: Stage 1 → Stage 2 → Stage 3" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/proj3-14.png" alt="Docker layer caching concept" />
+      </div>
+      <p>
+        I applied two key optimizations to speed up the build process:
+      </p>
+      <ul>
+        <li><strong>Multi-stage Docker builds</strong> — Separates build dependencies from runtime dependencies, reducing the final image size significantly</li>
+        <li><strong>Docker layer caching</strong> — Reuses unchanged build layers (e.g., <code>apt-get install</code>, <code>apt-get update</code>), so only the changed source code layer is rebuilt</li>
+      </ul>
+
+      <h2>7. Kubernetes Deployment and Serving</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-9.png" alt="Jenkins credentials: kubeconfig.yaml stored as Secret file" />
+      </div>
+      <p>
+        I stored the <strong>Kubernetes access configuration (kubeconfig.yaml)</strong> as a Jenkins Secret file credential,
+        following production best practices for <strong>secure infrastructure access management</strong>.
+      </p>
+
+      <div class="image-gallery">
+        <img src="slides/proj3-10.png" alt="Jenkins log: kubectl apply deployment.yaml success" />
+      </div>
+      <p>
+        Jenkins used <strong>kubectl</strong> with the stored kubeconfig to apply the deployment configuration.
+        The log shows <code>deployment.apps/crime-prediction-app</code> and <code>service/crime-prediction-service</code>
+        successfully applied.
+      </p>
+
+      <div class="image-gallery">
+        <img src="slides/proj3-11.png" alt="Kubernetes dashboard showing crime-prediction-service running" />
+      </div>
+      <p>
+        The <strong>Kubernetes dashboard</strong> confirms the service was created and exposed as
+        <code>crime-prediction-service</code> (NodePort, ClusterIP 10.97.125.66).
+        The model was successfully promoted from a build artifact into a <strong>running cluster service</strong>.
+      </p>
+
+      <h2>8. Pipeline Optimization Result</h2>
+      <div class="image-gallery">
+        <img src="slides/proj3-16.png" alt="Before optimization: Build #5, 2 min 4 sec" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/proj3-15.png" alt="After optimization: Build #25, 1 min 38 sec" />
+      </div>
+      <ul>
+        <li><strong>Before optimization (Build #5)</strong> — Total pipeline time: <strong>2 min 4 sec</strong></li>
+        <li><strong>After optimization (Build #25)</strong> — Total pipeline time: <strong>1 min 38 sec</strong></li>
+      </ul>
+      <p>
+        A <strong>~21% reduction in build time</strong> through multi-stage builds and layer caching.
+        This matters because repeated CI/CD runs compound quickly, especially with containerized ML systems.
+      </p>
+
+      <div class="detail-divider"></div>
+
+      <h2>What I Gained</h2>
+      <ul>
+        <li>
+          <strong>End-to-end MLOps pipeline construction</strong> — Built the full path from model training to production serving (PySpark → Docker → Jenkins → Kubernetes), understanding how each component connects in a real deployment workflow.
+        </li>
+        <li>
+          <strong>CI/CD automation for ML systems</strong> — Learned to set up webhook-triggered pipelines where a single git push automatically builds, tests, containerizes, and deploys a model to a running cluster.
+        </li>
+        <li>
+          <strong>Docker optimization for production</strong> — Applied multi-stage builds and layer caching to reduce image size and build time, skills that directly transfer to any containerized production system.
+        </li>
+        <li>
+          <strong>Kubernetes deployment and service exposure</strong> — Gained hands-on experience deploying ML services to Kubernetes, managing credentials securely, and exposing prediction endpoints as cluster services.
+        </li>
+        <li>
+          <strong>Bridging ML and engineering</strong> — This project reinforced that building a good model is only half the job; the other half is making it deployable, reproducible, and maintainable in production.
+        </li>
+      </ul>
 
     </div>
   </div>

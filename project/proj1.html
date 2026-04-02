@@ -32,100 +32,19 @@
     <div class="detail-body">
       <h2>Overview</h2>
       <p>
-      This project is an end to end AI system that predicts regional crime risk from large scale public safety data and translates those predictions into actionable insurance recommendations through a conversational interface.
-
-      Rather than stopping at model prediction, I designed the pipeline to connect data engineering, feature engineering, model optimization, and AI deployment into one integrated system.
+        This project is an <strong>end-to-end AI system</strong> that predicts regional crime risk from large-scale
+        public safety data and translates those predictions into <strong>actionable insurance recommendations</strong>
+        through a conversational interface. Rather than stopping at model prediction, I designed the pipeline to
+        connect data engineering, feature engineering, model optimization, and AI deployment into one integrated system.
       </p>
 
       <h2>Problem Statement</h2>
       <p>
-      Public crime datasets are complex and difficult for non technical users to interpret.
-
-      The goal of this project was to not only predict crime risk, but also convert those predictions into intuitive, user friendly insights and personalized insurance recommendations using a GPT based chatbot.
+        Public crime datasets are complex and difficult for non-technical users to interpret.
+        The goal was to not only <strong>predict crime risk</strong>, but also convert those predictions into
+        intuitive, user-friendly insights and <strong>personalized insurance recommendations</strong>
+        using a GPT-based chatbot (<strong>InsureWise</strong>).
       </p>
-
-      <h2>Final Analytical Output</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-6.jpg" alt="Dashboard overview" />
-      </div>
-      <p>
-      This dashboard summarizes the final output of the project, combining regional crime distribution, category level analysis, and severity based risk scoring.
-
-      I focused on making the results interpretable so users can quickly understand where risk is concentrated and what factors are driving it.
-      </p>
-
-      <h2>System Architecture</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-1.jpg" alt="System architecture" />
-      </div>
-      <p>
-      The system starts with Kaggle crime data, followed by PySpark based preprocessing and feature engineering.
-
-      I then trained multiple models including XGBoost, Random Forest, and LightGBM, and deployed the best model through a Flask API.
-
-      Finally, I integrated the system with a GPT based chatbot to enable natural language interaction.
-      </p>
-
-      <h2>1. Data Preprocessing</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-2.jpg" alt="Preprocessing code" />
-      </div>
-      <p>
-      I processed about 237 thousand crime records using PySpark.
-
-      This included data cleaning, handling missing values, and standardizing fields such as crime type, location, and timestamp.
-
-      I also mapped raw location descriptions into structured categories to make the dataset suitable for modeling.
-      </p>
-
-      <h2>2. Feature Engineering</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-3.jpg" alt="Feature engineering" />
-      </div>
-      <p>
-      I engineered over 100 features capturing temporal patterns such as hour, weekday, and season, as well as geographic and severity based risk indicators.
-
-      In particular, I designed composite risk features by combining location based risk and crime severity, which significantly improved model performance.
-      </p>
-
-      <h2>3. Modeling and Evaluation</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-4.jpg" alt="Model results" />
-      </div>
-      <p>
-      I compared XGBoost, Random Forest, and LightGBM using accuracy, F1 score, and validation performance.
-
-      XGBoost performed best with 89.96 percent test accuracy and strong generalization, making it the final model for deployment.
-      </p>
-
-      <h2>4. AI Application Layer</h2>
-      <div class="image-gallery">
-        <img src="slides/proj1-5.jpg" alt="Flask GPT integration" />
-      </div>
-      <p>
-      I deployed the model as a Flask API and integrated it with a GPT based chatbot.
-
-      The system takes user location as input, predicts crime risk, and generates personalized insurance recommendations in natural language.
-
-      This transforms the project from a prediction model into a user facing AI application.
-      </p>
-
-      <h2>What This Project Demonstrates</h2>
-      <ul>
-        <li>Large scale data processing with PySpark</li>
-        <li>Feature engineering for structured risk modeling</li>
-        <li>Model comparison and performance optimization</li>
-        <li>Flask based API deployment</li>
-        <li>GPT integration for real world AI applications</li>
-      </ul>
-
-      <h2>Why This Project Matters</h2>
-      <p>
-      This project shows my ability to build a complete AI system from data processing to deployment.
-
-      More importantly, it demonstrates how I connect machine learning models with real user experiences by translating predictions into actionable insights.
-      </p>
-
 
       <div class="detail-tags">
         <span>PySpark</span>
@@ -133,8 +52,117 @@
         <span>Flask API</span>
         <span>GPT</span>
         <span>Machine Learning</span>
-        <span>AI Engineer</span>
+        <span>Tableau</span>
       </div>
+
+      <div class="detail-divider"></div>
+
+      <h2>Project Walkthrough</h2>
+
+      <h2>1. System Architecture</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-1.jpg" alt="Full system architecture with InsureWise chatbot UI" />
+      </div>
+      <p>
+        The full pipeline: <strong>Kaggle</strong> crime data → <strong>PySpark</strong> (on Colab) for preprocessing and feature engineering
+        → ML models (<strong>LightGBM, Random Forest, XGBoost</strong>) → <strong>Tableau</strong> for visualization
+        → <strong>Flask API</strong> + <strong>GPT-powered chatbot (InsureWise)</strong> for end-user interaction.
+        The right side shows the actual InsureWise chatbot interface, where users select their area and housing type
+        to receive personalized crime risk analysis and insurance recommendations.
+      </p>
+
+      <h2>2. Data Preprocessing</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-2.jpg" alt="PySpark data preprocessing code" />
+      </div>
+      <p>
+        I processed approximately <strong>237,000 crime records</strong> using PySpark:
+      </p>
+      <ul>
+        <li><strong>Location categorization</strong> — Mapped raw location descriptions into structured categories (Residential, Commercial, Transport, Public, Education, Medical, etc.)</li>
+        <li><strong>Crime type classification</strong> — Grouped primary types into categories (Theft → Property, Battery → Violent, Narcotics → Drug, Weapons Violation → Weapons, etc.)</li>
+        <li><strong>Temporal features</strong> — Added Season (Winter/Spring/Summer/Fall) and Day Type (Weekday/Weekend) classifications</li>
+      </ul>
+
+      <h2>3. Feature Engineering</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-3.jpg" alt="Feature engineering: Area Risk Score, Crime Severity Score, Total Risk Score" />
+      </div>
+      <p>
+        I engineered <strong>over 100 features</strong> and designed three core risk scoring systems:
+      </p>
+      <ul>
+        <li><strong>Area Risk Score</strong> — Calculated per community area by normalizing crime counts (groupBy CA_Name)</li>
+        <li><strong>Crime Severity Score</strong> — Weighted scoring by crime type (Homicide: 10, Criminal Sexual Assault: 9, Kidnapping: 8, Robbery: 7, Assault: 6, Burglary: 4, Theft: 3)</li>
+        <li><strong>Total Risk Score</strong> — Composite metric combining Crime Severity × Location Risk using PySpark UDFs, creating a single risk indicator per record</li>
+      </ul>
+
+      <h2>4. Modeling and Evaluation</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-4.jpg" alt="Model comparison: XGBoost vs Random Forest vs LightGBM" />
+      </div>
+      <p>
+        I compared three models using accuracy, F1 score, validation performance, and overfitting metrics:
+      </p>
+      <ul>
+        <li><strong>XGBoost (1st)</strong> — 89.96% test accuracy, 89.05% F1, 89.76% validation accuracy, 0.80% overfitting, 29.04s training</li>
+        <li><strong>Random Forest (2nd)</strong> — 89.24% accuracy, 87.64% F1, 88.73% validation, 0.69% overfitting, ~60s training</li>
+        <li><strong>LightGBM (3rd)</strong> — 76.02% accuracy, 80.01% F1, 76.02% validation, -0.15% overfitting, 2.02s training</li>
+      </ul>
+      <p>
+        <strong>XGBoost</strong> was selected as the final model — best accuracy with strong generalization and minimal overfitting.
+      </p>
+
+      <h2>5. Flask API with GPT Chatbot</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-5.jpg" alt="Flask API prediction endpoint and GPT insurance recommendation code" />
+      </div>
+      <p>
+        I deployed the trained XGBoost model as a <strong>Flask API</strong> with two core endpoints:
+      </p>
+      <ul>
+        <li><strong><code>/predict</code> endpoint</strong> — Takes user location data (name, region, housing type, community area), runs the model, and returns crime risk predictions</li>
+        <li><strong><code>/gpt_recommend</code> endpoint</strong> — Feeds the prediction results into <strong>GPT</strong>, which generates personalized insurance recommendations in natural language, mapping housing types to readable labels (Residential → Apartment/House, Commercial → Store/Office, etc.)</li>
+      </ul>
+      <p>
+        This transforms the project from a prediction model into a <strong>user-facing AI application (InsureWise)</strong>.
+      </p>
+
+      <h2>6. Analytical Dashboard</h2>
+      <div class="image-gallery">
+        <img src="slides/proj1-6.jpg" alt="Tableau dashboard: Crime map, category analysis, severity, risk scores" />
+      </div>
+      <p>
+        The <strong>Tableau dashboard</strong> visualizes the final analytical output with four components:
+      </p>
+      <ul>
+        <li><strong>Crime in Chicago (bubble map)</strong> — Regional crime distribution showing West Side and South Side as highest-risk areas</li>
+        <li><strong>Crime analysis in location</strong> — Bar chart breaking down crimes by location category (Residential dominant)</li>
+        <li><strong>Crime category in region</strong> — Table showing Violent, Weapons, Drug, Property, and Sex Crime counts per region</li>
+        <li><strong>Crime severity</strong> — Horizontal bar chart comparing severity across crime categories (Violent as highest)</li>
+      </ul>
+
+      <div class="detail-divider"></div>
+
+      <h2>What I Gained</h2>
+      <ul>
+        <li>
+          <strong>Large-scale data processing with PySpark</strong> — Processed 237K records with structured categorization, temporal feature extraction, and custom UDFs, learning how to handle data at scale beyond pandas.
+        </li>
+        <li>
+          <strong>Designing interpretable risk scoring systems</strong> — Built composite risk metrics (Area Risk × Crime Severity) that are not just model inputs but also directly meaningful to end users and insurance professionals.
+        </li>
+        <li>
+          <strong>Rigorous model comparison methodology</strong> — Went beyond just accuracy to evaluate overfitting, validation performance, and training efficiency across three models to make an informed deployment decision.
+        </li>
+        <li>
+          <strong>Connecting ML to real user experience</strong> — Learned that the most impactful part of an ML project is often the last mile: turning predictions into something a non-technical user can understand and act on through GPT-powered natural language.
+        </li>
+        <li>
+          <strong>Full-stack AI system design</strong> — Built the complete path from raw data to deployed chatbot (Kaggle → PySpark → XGBoost → Flask → GPT → InsureWise), understanding how each layer connects in a production-oriented AI system.
+        </li>
+      </ul>
+
     </div>
   </div>
 

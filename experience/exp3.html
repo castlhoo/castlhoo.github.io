@@ -87,17 +87,116 @@
         <span>Feature Engineering</span>
       </div>
 
-      <div class="portfolio-slides">
-        <h2>Portfolio</h2>
-        <div class="slides-grid">
-          <img src="slides/13.jpg" alt="Concentrix Slide 1" />
-          <img src="slides/14.jpg" alt="Concentrix Slide 2" />
-          <img src="slides/15.jpg" alt="Concentrix Slide 3" />
-          <img src="slides/16.jpg" alt="Concentrix Slide 4" />
-          <img src="slides/17.jpg" alt="Concentrix Slide 5" />
-          <img src="slides/18.jpg" alt="Concentrix Slide 6" />
-        </div>
+      <div class="detail-divider"></div>
+
+      <h2>Project Walkthrough</h2>
+
+      <h2>1. Data Sources & Context</h2>
+      <div class="image-gallery">
+        <img src="slides/13.jpg" alt="Project overview and social listening data sources" />
       </div>
+      <p>
+        The project started by collecting <strong>social listening data</strong> from platforms like Instagram
+        and community-driven content such as <strong>7KM Run Club</strong>.
+        These sources provided real user reactions, comments, and engagement signals
+        around Samsung campaigns and Galaxy Watch-related content.
+      </p>
+
+      <h2>2. Understanding Customer Perception</h2>
+      <div class="image-gallery">
+        <img src="slides/14.jpg" alt="Reddit user perceptions of Galaxy Watch" />
+      </div>
+      <p>
+        I examined how real users perceive Galaxy Watch through platforms like <strong>Reddit</strong>.
+        Common sentiments included:
+      </p>
+      <ul>
+        <li><strong>"An additional gadget for your smartphone"</strong> — seen as an ecosystem accessory, not a standalone product</li>
+        <li><strong>"Luxury cool item, almost totally useless"</strong> — appealing design but limited practical value</li>
+        <li><strong>Price sensitivity</strong> — users wait for deals rather than paying full price</li>
+      </ul>
+      <p>
+        These raw perceptions helped define what content themes resonate — and what falls flat.
+      </p>
+
+      <h2>3. Feature Engineering</h2>
+      <div class="image-gallery">
+        <img src="slides/15.jpg" alt="Feature engineering pipeline from raw data to structured scores" />
+      </div>
+      <p>
+        I transformed three raw data sources into structured, model-ready features:
+      </p>
+      <ul>
+        <li><strong>Campaign performance data</strong> (likes, comments, CTR, VTR) → Content Relevance Scores with activity-specific signals (Running, Sleep, Fitness)</li>
+        <li><strong>Creative and content tags</strong> (fitness, sleep, design, promotion) → Content Attribute Scores (Health Function, Design, Promotion)</li>
+        <li><strong>Social listening text</strong> (consumer context and perception) → Engagement Features (Impressions, Likes, CTR, VTR)</li>
+      </ul>
+
+      <h2>4. Modeling & Key Findings</h2>
+      <div class="image-gallery">
+        <img src="slides/16.jpg" alt="Random Forest model and key findings" />
+      </div>
+      <p>
+        I trained a <strong>Random Forest</strong> model targeting Engagement Rate and Click-Through Rate,
+        using the engineered content relevance, attribute, and engagement features as inputs.
+      </p>
+      <ul>
+        <li>Content with higher <strong>Running Signal Scores</strong> showed a meaningful uplift in engagement</li>
+        <li>The running signal consistently appeared as a <strong>top feature</strong> in model importance analysis</li>
+      </ul>
+
+      <h2>5. Scenario Comparison (Uplift Simulation)</h2>
+      <div class="image-gallery">
+        <img src="slides/17.jpg" alt="Scenario A vs B uplift simulation" />
+      </div>
+      <p>
+        To validate the finding, I designed an A/B scenario simulation:
+      </p>
+      <ul>
+        <li><strong>Scenario A</strong> — Low Running Signal Score with baseline content setup</li>
+        <li><strong>Scenario B</strong> — High Running Signal Score with enhanced running-related elements</li>
+      </ul>
+      <p>
+        The result: <strong>strengthening running-related content signals led to a measurable uplift</strong>
+        in predicted engagement compared to the baseline.
+      </p>
+
+      <h2>6. From Insight to Execution</h2>
+      <div class="image-gallery">
+        <img src="slides/18.jpg" alt="Insight to execution - real campaign examples" />
+      </div>
+      <p>
+        The data-driven insight translated directly into Samsung's real content strategy:
+      </p>
+      <ul>
+        <li>Amplified <strong>7KM Run Club</strong> community content on Instagram</li>
+        <li>Launched a <strong>Son Heung-min × Galaxy Watch 8</strong> collaboration campaign ("A Day of Sonny")</li>
+        <li>Promoted the <strong>Running Coach</strong> feature as a core product message</li>
+      </ul>
+      <p>
+        These were the exact content themes our model identified as high-engagement drivers.
+      </p>
+
+      <div class="detail-divider"></div>
+
+      <h2>What I Gained</h2>
+      <ul>
+        <li>
+          <strong>End-to-end consulting experience</strong> — From raw social data collection to delivering actionable insights to a global client (Samsung), I experienced the full lifecycle of a data-driven consulting project.
+        </li>
+        <li>
+          <strong>Feature engineering for unstructured data</strong> — Learned to convert messy social listening signals (text, tags, engagement metrics) into structured, model-ready features that actually predict outcomes.
+        </li>
+        <li>
+          <strong>Translating ML results into business strategy</strong> — The hardest part wasn't building the model; it was making the output meaningful to non-technical stakeholders and connecting it to real content decisions.
+        </li>
+        <li>
+          <strong>Uplift simulation design</strong> — Designed scenario-based simulations to validate model findings before recommending strategy changes, bridging the gap between prediction and action.
+        </li>
+        <li>
+          <strong>Working at the intersection of data and marketing</strong> — This project taught me how product analytics, user behavior, and content strategy all connect — and how ML can be the bridge between them.
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -106,7 +205,7 @@
   </div>
 
   <script>
-    document.querySelectorAll('.slides-grid img').forEach(img => {
+    document.querySelectorAll('.image-gallery img').forEach(img => {
       img.addEventListener('click', () => {
         document.getElementById('lightbox-img').src = img.src;
         document.getElementById('lightbox').classList.add('active');

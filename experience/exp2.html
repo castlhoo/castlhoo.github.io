@@ -12,7 +12,9 @@
 <body>
   <div class="detail-container">
     <a href="../index.html#experience" class="back-link">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/>
+      </svg>
       Back to Experience
     </a>
 
@@ -24,14 +26,25 @@
         <span>Oct 2025 - Present</span>
         <span>San Diego, CA</span>
       </div>
+
       <div class="detail-links">
         <a href="https://engineering.ucsb.edu/news/leap-forward-ai-enabled-materials-research" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
           UCSB Engineering Article
         </a>
         <a href="https://sites.google.com/view/uc-leap/home" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
           UC LEAP Official Site
+        </a>
+        <a href="https://zhiting.ucsd.edu/" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
+          Zhiting Hu Lab
         </a>
       </div>
     </div>
@@ -41,45 +54,45 @@
     <div class="detail-body">
       <h2>Overview</h2>
       <p>
-        At UC San Diego MixLab, I work on LLM systems for scientific research automation and reproducibility.
-        My research focuses on building multi agent AI pipelines that can extract scientific variables, datasets,
-        and analysis procedures from papers, then use multimodal experimental data to reproduce and interpret
-        published results.
+        At UC San Diego MixLab, I work on LLM systems for scientific reproducibility.
+        My work focuses on building a pipeline that connects scientific papers, structured experimental datasets, and evaluation driven feedback so that large language models can reproduce key analyses from published research.
+      </p>
+
+      <h2>Core Focus</h2>
+      <p>
+        The project is centered on one main question: can LLMs understand scientific papers and experimental data well enough to reproduce meaningful research results.
+        To answer this, I worked on four core components: structuring scientific datasets, designing task grounded prompts, benchmarking model outputs, and improving results through a RAG based feedback loop.
       </p>
 
       <h2>Key Responsibilities</h2>
       <ul>
         <li>
-          Built a RAG based multi agent LLM pipeline to extract variables, datasets, and analysis workflows
-          from scientific literature.
+          Structured multimodal scientific datasets (Raman spectroscopy, AFM, electronic transport) into annotation, figure level, and raw data layers for LLM consumption.
         </li>
         <li>
-          Developed systems that use multimodal experimental data, including Raman spectroscopy, AFM, and
-          electronic transport measurements, to reproduce scientific analyses.
+          Designed task grounded prompts that guide LLMs through reproducible scientific workflows including data loading, variable identification, and plot reconstruction.
         </li>
         <li>
-          Worked on benchmarking and RL style feedback strategies to improve paper reproduction accuracy
-          and scientific reasoning quality.
+          Built a multi dimensional benchmarking framework to evaluate model outputs against original paper figures across scientific consistency, methodology, and visualization quality.
         </li>
         <li>
-          Integrated material, surface, and transport signals into a unified AI workflow for automated
-          experimental interpretation.
+          Implemented a RAG pipeline using ChromaDB to parse, chunk, and retrieve relevant sections from scientific papers during analysis.
+        </li>
+        <li>
+          Developed an evaluation driven repair loop that detects weaknesses in model outputs and iteratively improves them using retrieved context.
         </li>
       </ul>
 
       <h2>Achievements</h2>
       <ul>
         <li>
-          Contributed to a research direction that combines LLMs, retrieval systems, and multimodal scientific
-          data for reproducible AI driven discovery.
+          Successfully reproduced key analyses from published research papers using LLM generated code and reasoning, validated against original figures.
         </li>
         <li>
-          Helped create an end to end framework that moves beyond text summarization into executable scientific
-          analysis and result reconstruction.
+          Demonstrated measurable improvement in scientific accuracy after applying RAG based retrieval and iterative feedback compared to one shot generation.
         </li>
         <li>
-          Strengthened my experience in AI engineering through real world work on agent systems, grounded
-          reasoning, and scientific data workflows.
+          Built a reusable end to end pipeline (data structuring → prompting → evaluation → retrieval → repair) that can be applied to new scientific domains beyond the initial dataset.
         </li>
       </ul>
 
@@ -87,40 +100,126 @@
         <span>RAG</span>
         <span>LLMs</span>
         <span>Multi Agent Systems</span>
-        <span>Python</span>
         <span>Scientific AI</span>
+        <span>Benchmarking</span>
         <span>Multimodal Data</span>
       </div>
 
-      <div class="portfolio-slides">
-        <h2>Portfolio</h2>
-        <div class="slides-grid">
-          <img src="slides/exp2-slide1.jpg" alt="UC San Diego MixLab Slide 1" />
-          <img src="slides/exp2-slide2.jpg" alt="UC San Diego MixLab Slide 2" />
-          <img src="slides/exp2-slide3.jpg" alt="UC San Diego MixLab Slide 3" />
-          <img src="slides/exp2-slide4.jpg" alt="UC San Diego MixLab Slide 4" />
-          <img src="slides/exp2-slide6.jpg" alt="UC San Diego MixLab Slide 6" />
-          <img src="slides/exp2-slide7.jpg" alt="UC San Diego MixLab Slide 7" />
-          <img src="slides/exp2-slide8.jpg" alt="UC San Diego MixLab Slide 8" />
-          <img src="slides/exp2-slide9.jpg" alt="UC San Diego MixLab Slide 9" />
-          <img src="slides/exp2-slide10.jpg" alt="UC San Diego MixLab Slide 10" />                              
-        </div>
+      <div class="detail-divider"></div>
+
+      <h2>Project Walkthrough</h2>
+
+      <h2>Project Objective</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide1.jpg" alt="Research objective summary slide" />
       </div>
+      <p>
+        The main objective of the UC LEAP project is to evaluate whether large language models can understand both scientific papers and experimental datasets well enough to reproduce key analyses.
+        My contribution focuses on making that question testable through structured tasks, grounded prompts, measurable evaluation, and iterative improvement.
+      </p>
+
+      <h2>1. Structured Data Representation</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide3.jpg" alt="Structured data representation for UC LEAP" />
+      </div>
+      <p>
+        I first organized the dataset into clear layers such as annotation, figure level data, and raw data so the model could work with a consistent scientific structure instead of unorganized files.
+        I also defined required inputs and relevant variables such as filling factor, magnetic field, and inverse compressibility so each task was grounded in explicit experimental targets.
+        This step was important because it turned the dataset into a machine readable research workspace rather than a loose collection of files.
+      </p>
+
+      <h2>2. Prompt Engineering</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide4.jpg" alt="Prompt engineering and task design" />
+      </div>
+      <p>
+        After structuring the dataset, I designed step by step prompts that force the model to follow a reproducible scientific workflow.
+        Instead of asking the model to solve the task directly, the prompt guides it through data loading, variable identification, inspection, and plot reconstruction in sequence.
+        This improved performance compared with less structured prompting and reduced failure caused by vague reasoning.
+      </p>
+
+      <h2>3. Benchmarking and Evaluation</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide6.jpg" alt="Benchmarking and evaluation results" />
+      </div>
+      <p>
+        I built an evaluation framework to score each model output against the original paper figures.
+        The framework measures multiple dimensions such as scientific consistency, methodology correctness, data handling completeness, visualization quality, and analysis depth.
+        This allowed me to compare models quantitatively, track token efficiency, and identify which agents performed better on which tasks instead of relying on subjective inspection alone.
+      </p>
+
+      <h2>4. RAG Pipeline for Scientific Context</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide7.jpg" alt="RAG paper ingestion into ChromaDB" />
+      </div>
+      <p>
+        I then built a RAG pipeline that parses scientific papers, chunks the text, and stores it in a vector database for retrieval.
+        This gives the model access to targeted scientific context during analysis rather than relying only on internal memory.
+        In practice, this lets the system retrieve the most relevant paper sections, variables, and methodological details when reconstructing experiments.
+      </p>
+
+      <h2>5. Weakness Analysis from Evaluation</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide8.jpg" alt="Weakness analysis based on evaluation scores" />
+      </div>
+      <p>
+        Once evaluation scores were available, I used them to detect specific weaknesses in model outputs.
+        Rather than saying an output was simply wrong, I extracted which dimension failed, such as shallow interpretation or incomplete handling of the dataset.
+        This converted evaluation into a diagnostic tool and made the next improvement step much more targeted.
+      </p>
+
+      <h2>6. RAG based Repair and Iterative Improvement</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide9.jpg" alt="RAG based repair pipeline" />
+      </div>
+      <p>
+        After identifying weak points, I built a repair pipeline that combines retrieved context with evaluation driven feedback to improve the original output.
+        The system retrieves evidence relevant to the detected weakness, then uses that information to revise reasoning and code rather than generating from scratch again.
+        This creates an iterative loop where the model improves based on grounded feedback instead of one shot trial and error.
+      </p>
+
+      <h2>7. Result Comparison</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide10.jpg" alt="Before and after RAG result comparison" />
+      </div>
+      <p>
+        The final comparison shows the practical value of the pipeline.
+        Before RAG and feedback, generated plots often missed important physical patterns from the paper.
+        After retrieval and repair, the outputs aligned much more closely with the original figures, showing that grounded context and iterative correction meaningfully improved scientific accuracy and reproducibility.
+      </p>
+
+      <h2>Research Summary</h2>
+      <div class="image-gallery">
+        <img src="slides/exp2-slide2.jpg" alt="Experiment agent architecture" />
+      </div>
+      <p>
+        At a system level, this work combines model generation, evaluation, retrieval, and feedback into one research pipeline.
+        Different models generate analyses from the same scientific dataset, the outputs are scored against paper level references, and the results are improved through a feedback loop.
+        The broader goal is to build AI systems that can move beyond summarizing papers and instead reproduce scientific reasoning in a grounded and testable way.
+      </p>
+
+      <div class="detail-divider"></div>
+
+      <h2>What I Gained</h2>
+      <ul>
+        <li>
+          <strong>Designing LLM systems for real scientific tasks</strong> — Learned how to move beyond generic prompting and build task specific pipelines where LLMs interact with structured data, follow scientific workflows, and produce verifiable outputs.
+        </li>
+        <li>
+          <strong>End to end pipeline thinking</strong> — Experienced the full cycle from raw data structuring to evaluation to retrieval to iterative repair, understanding how each component feeds into the next.
+        </li>
+        <li>
+          <strong>RAG architecture for domain specific retrieval</strong> — Built a retrieval system tailored for scientific papers, learning how chunking strategy, embedding quality, and context relevance directly affect downstream model performance.
+        </li>
+        <li>
+          <strong>Evaluation as a diagnostic tool</strong> — Shifted from treating evaluation as a pass or fail metric to using it as a structured signal that drives targeted improvement in model outputs.
+        </li>
+        <li>
+          <strong>Working with multimodal scientific data</strong> — Gained hands on experience with Raman spectroscopy, AFM imaging, and electronic transport measurements, learning to bridge the gap between domain expertise and AI system design.
+        </li>
+      </ul>
     </div>
   </div>
-
-  <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
-    <img id="lightbox-img" src="" alt="" />
-  </div>
-
-  <script>
-    document.querySelectorAll('.slides-grid img').forEach(img => {
-      img.addEventListener('click', () => {
-        document.getElementById('lightbox-img').src = img.src;
-        document.getElementById('lightbox').classList.add('active');
-      });
-    });
-  </script>
 
   <div class="detail-footer">
     <p>&copy; 2026 Seongho Kim. All rights reserved.</p>

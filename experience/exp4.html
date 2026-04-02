@@ -86,28 +86,193 @@
         <span>Cloud Infrastructure</span>
       </div>
 
-      <div class="portfolio-slides">
-        <h2>Portfolio</h2>
-        <div class="slides-grid">
-          <img src="slides/19.jpg" alt="Woori Financial Group Slide 1" />
-          <img src="slides/20.jpg" alt="Woori Financial Group Slide 2" />
-          <img src="slides/21.jpg" alt="Woori Financial Group Slide 3" />
-          <img src="slides/22.jpg" alt="Woori Financial Group Slide 4" />
-          <img src="slides/23.jpg" alt="Woori Financial Group Slide 5" />
-          <img src="slides/24.jpg" alt="Woori Financial Group Slide 6" />
-          <img src="slides/25.jpg" alt="Woori Financial Group Slide 7" />
-          <img src="slides/26.jpg" alt="Woori Financial Group Slide 8" />
-          <img src="slides/27.jpg" alt="Woori Financial Group Slide 9" />
-          <img src="slides/28.jpg" alt="Woori Financial Group Slide 10" />
-          <img src="slides/29.jpg" alt="Woori Financial Group Slide 11" />
-          <img src="slides/30.jpg" alt="Woori Financial Group Slide 12" />
-          <img src="slides/31.jpg" alt="Woori Financial Group Slide 13" />
-          <img src="slides/32.jpg" alt="Woori Financial Group Slide 14" />
-          <img src="slides/33.jpg" alt="Woori Financial Group Slide 15" />
-          <img src="slides/34.jpg" alt="Woori Financial Group Slide 16" />
-          <img src="slides/35.jpg" alt="Woori Financial Group Slide 17" />
-        </div>
+      <div class="detail-divider"></div>
+
+      <h2>Project Walkthrough</h2>
+
+      <h2>1. Infrastructure Architecture Overview</h2>
+      <div class="image-gallery">
+        <img src="slides/19.jpg" alt="Infrastructure architecture overview" />
       </div>
+      <div class="image-gallery">
+        <img src="slides/24.jpg" alt="Detailed AWS architecture diagram" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/25.jpg" alt="Infrastructure design philosophy" />
+      </div>
+      <p>
+        The project was an <strong>AWS migration</strong> for Woori Financial Securities.
+        I designed the overall infrastructure architecture with three core design principles:
+      </p>
+      <ul>
+        <li><strong>Security</strong> — Bastion Host for secure access, private subnet isolation, and SSH-based access control</li>
+        <li><strong>Manageability</strong> — EKS with 4 node groups and 6 nodes, centralized operations, and auto recovery (health check + scaling + rescheduling)</li>
+        <li><strong>High Availability</strong> — Multi-AZ deployment with fault tolerance across zones and continuous service during failures</li>
+      </ul>
+
+      <h2>2. Overall System Architecture</h2>
+      <div class="image-gallery">
+        <img src="slides/20.jpg" alt="Overall system architecture with Terraform and Kubernetes" />
+      </div>
+      <p>
+        The system was built on three pillars:
+      </p>
+      <ul>
+        <li><strong>Terraform (IaC)</strong> — Version-controlled and reproducible infrastructure with batch deployment of AWS services, reducing manual errors</li>
+        <li><strong>High Availability (Kubernetes)</strong> — Redis cluster + multi-pod deployment with no single point of failure, load balancing across pods, and auto recovery</li>
+        <li><strong>Data Separation</strong> — Sensitive and general data isolated for improved security, regulatory compliance, and optimized performance</li>
+      </ul>
+
+      <h2>3. Real-time Market Data Pipeline</h2>
+      <div class="image-gallery">
+        <img src="slides/21.jpg" alt="Real-time market data processing system" />
+      </div>
+      <p>
+        I built an <strong>end-to-end real-time data delivery pipeline</strong> for market data:
+        Korea Investment API → Redis Pub/Sub → WebSocket.
+      </p>
+      <ul>
+        <li><strong>Data Collection (Publisher)</strong> — Standardizes external API data, handles errors and reconnection, controls API load with rate limiting</li>
+        <li><strong>Data Distribution (Redis Pub/Sub)</strong> — In-memory for ultra-low latency, one-to-many real-time broadcasting with high scalability</li>
+        <li><strong>User Delivery (WebSocket)</strong> — Real-time push with ms-level latency, persistent connection with no HTTP overhead</li>
+      </ul>
+
+      <div class="image-gallery">
+        <img src="slides/22.jpg" alt="Real-time market data batch storage" />
+      </div>
+      <p>
+        For persistent storage, I designed a <strong>batch storage pipeline</strong>:
+        Redis Cache → Scheduled Batch → MySQL.
+        This reduced DB load, enabled faster real-time queries via cache, and used efficient bulk INSERT for optimized transactions.
+      </p>
+
+      <h2>4. Database Replication</h2>
+      <div class="image-gallery">
+        <img src="slides/23.jpg" alt="Database replication with read/write separation" />
+      </div>
+      <p>
+        I implemented <strong>read/write separation</strong> using Master (write) + Read Replica (read) for load distribution and scalability.
+      </p>
+      <ul>
+        <li><strong>High Availability</strong> — Standby DB for failover, minimizing downtime and data loss</li>
+        <li><strong>AOP Routing</strong> — Read queries route to Replica, write queries route to Master, keeping the logic transparent and maintainable</li>
+      </ul>
+
+      <h2>5. CI/CD Pipeline</h2>
+      <div class="image-gallery">
+        <img src="slides/26.jpg" alt="CI/CD pipeline configuration" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/27.jpg" alt="CI/CD pipeline design details" />
+      </div>
+      <p>
+        I built an automated <strong>CI/CD pipeline</strong>: Developer → GitHub → Bastion Host → Jenkins → Lambda → ECR → ArgoCD.
+      </p>
+      <ul>
+        <li><strong>Secure Integration</strong> — GitHub → Jenkins via Bastion Host with IP Whitelist for webhook security</li>
+        <li><strong>Automation</strong> — Git push triggers auto build and deploy; API Gateway + Lambda for serverless triggers</li>
+        <li><strong>Image Management</strong> — Docker → ECR (private registry) with IAM and encryption</li>
+        <li><strong>GitOps (ArgoCD)</strong> — Auto sync from Git to EKS with easy monitoring and rollback</li>
+        <li><strong>Deployment Strategy</strong> — Backend and Frontend separated for independent scaling and deployment</li>
+      </ul>
+
+      <h2>6. Service Flow & User Experience</h2>
+      <div class="image-gallery">
+        <img src="slides/28.jpg" alt="Service flow architecture diagram" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/29.jpg" alt="Service flow detailed breakdown" />
+      </div>
+      <p>
+        The end-to-end service flow was designed as a <strong>3-layer architecture</strong>:
+      </p>
+      <ul>
+        <li><strong>User Access (Frontend)</strong> — WAF → Route53 → IGW → ALB for secure entry and traffic routing</li>
+        <li><strong>API Processing (Backend)</strong> — Internal ALB → Backend services with secure internal communication and load balancing</li>
+        <li><strong>Data Layer</strong> — Master/Replica DB with read/write separation + Redis cache for fast response</li>
+      </ul>
+
+      <h2>7. EKS Cluster Configuration</h2>
+      <div class="image-gallery">
+        <img src="slides/30.jpg" alt="EKS cluster and node group configuration" />
+      </div>
+      <p>
+        I configured the <strong>EKS cluster</strong> with 4 dedicated node groups:
+      </p>
+      <ul>
+        <li><strong>Frontend (React)</strong> — 2 nodes</li>
+        <li><strong>Backend (Spring)</strong> — 2 nodes</li>
+        <li><strong>Monitoring (Prometheus, Grafana)</strong> — 1 node</li>
+        <li><strong>Redis (Cache, Pub/Sub)</strong> — 1 node</li>
+      </ul>
+
+      <h2>8. Frontend & Backend Architecture</h2>
+      <div class="image-gallery">
+        <img src="slides/31.jpg" alt="Frontend architecture with ALB and Taint/Tolerance" />
+      </div>
+      <div class="image-gallery">
+        <img src="slides/32.jpg" alt="Backend architecture with Internal ALB and 3-Tier strategy" />
+      </div>
+      <ul>
+        <li><strong>Frontend</strong> — Internet-Facing ALB as the entry point for external traffic with SSL termination (HTTPS), routing traffic to React nodes only via Taint and Tolerance</li>
+        <li><strong>Backend</strong> — Internal ALB handling internal API traffic only, routing to Spring nodes</li>
+        <li><strong>ALB Strategy (3-Tier)</strong> — Frontend ALB for external traffic, Backend ALB for internal traffic, cleanly separated</li>
+      </ul>
+
+      <h2>9. Auto-Scaling (HPA)</h2>
+      <div class="image-gallery">
+        <img src="slides/33.jpg" alt="HPA auto-scaling configuration" />
+      </div>
+      <p>
+        I configured <strong>Horizontal Pod Autoscaler (HPA)</strong> to handle dynamic load:
+      </p>
+      <ul>
+        <li>Scale based on <strong>70% memory usage</strong> threshold</li>
+        <li>Min <strong>2 pods</strong> / Max <strong>5 pods</strong></li>
+        <li>High load → auto scale out, normal load → scale in</li>
+        <li>Benefits: elastic scaling, cost optimization, and stable performance</li>
+      </ul>
+
+      <h2>10. Testing & Validation</h2>
+      <div class="image-gallery">
+        <img src="slides/34.jpg" alt="IPO access rush response test" />
+      </div>
+      <p>
+        <strong>Test Scenario 1: IPO Access Rush Response</strong> —
+        Simulated a traffic spike scenario (IPO rush). Standard setup: 70% memory threshold with 2-5 pods.
+        Under IPO surge, pods auto-scaled out within <strong>~30 seconds</strong>, handling traffic spikes stably.
+      </p>
+
+      <div class="image-gallery">
+        <img src="slides/35.jpg" alt="RDS failover test" />
+      </div>
+      <p>
+        <strong>Test Scenario 2: RDS Failover</strong> —
+        Tested Multi-AZ failover with Master + Standby configuration.
+        When the primary AZ (2a) failed, the system auto-detected the failure and promoted Standby to Master.
+        Result: switch time <strong>under 2 minutes</strong>, <strong>0% data loss</strong> (RPO = 0), and minimal downtime (RTO &lt; 2 min).
+      </p>
+
+      <div class="detail-divider"></div>
+
+      <h2>What I Gained</h2>
+      <ul>
+        <li>
+          <strong>Production-grade AWS architecture design</strong> — Learned to design infrastructure that meets real financial industry requirements: high availability, security, and fault tolerance under heavy traffic.
+        </li>
+        <li>
+          <strong>End-to-end CI/CD pipeline construction</strong> — Built a full automated deployment pipeline from Git push to production (GitHub → Jenkins → ECR → ArgoCD), understanding how each component connects in a DevOps workflow.
+        </li>
+        <li>
+          <strong>Real-time data engineering</strong> — Designed and implemented a low-latency market data pipeline using Redis Pub/Sub and WebSocket, learning how to balance speed, reliability, and persistence in financial data systems.
+        </li>
+        <li>
+          <strong>Kubernetes cluster management</strong> — Gained hands-on experience managing EKS clusters with node group separation, HPA auto-scaling, Taint/Tolerance scheduling, and monitoring with Prometheus and Grafana.
+        </li>
+        <li>
+          <strong>Validating infrastructure through real scenario testing</strong> — Learned that building infrastructure is only half the job; testing it under real failure conditions (IPO rush, AZ failover) is what proves it actually works.
+        </li>
+      </ul>
     </div>
   </div>
 
@@ -116,7 +281,7 @@
   </div>
 
   <script>
-    document.querySelectorAll('.slides-grid img').forEach(img => {
+    document.querySelectorAll('.image-gallery img').forEach(img => {
       img.addEventListener('click', () => {
         document.getElementById('lightbox-img').src = img.src;
         document.getElementById('lightbox').classList.add('active');
